@@ -1,0 +1,2 @@
+# kkc-theme
+KKCのWordPressテーマ
