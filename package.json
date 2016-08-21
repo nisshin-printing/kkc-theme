@@ -1,0 +1,40 @@
+{
+  "name": "kkc-theme",
+  "version": "1.0.0",
+  "homepage": "http://www.keizai-kassei.net",
+  "description": "KKCのWordPressテーマ",
+  "main": "gulpfile.js",
+  "scripts": {
+    "watch": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nisshin-printing/kkc-theme.git"
+  },
+  "author": "Nisshin Printing Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nisshin-printing/kkc-theme/issues"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-filter": "^4.0.0",
+    "gulp-header": "^1.8.7",
+    "gulp-imagemin": "^3.0.2",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-svg2png": "^2.0.0",
+    "gulp-svgmin": "^1.2.2",
+    "gulp-svgstore": "^6.0.0",
+    "gulp-uglify": "^2.0.0",
+    "imagemin-pngquant": "^5.0.0"
+  }
+}
