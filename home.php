@@ -48,6 +48,40 @@ ob_start();
 		</div>
 	</div>
 </section>
+<section id="fb-gallary" class="row expanded">
+<?php
+	// アクセストークン取得
+	$app_id = '1785950408309369';
+	$app_secret = '39feb6ce1acaa4e0989ba7b642d53ea7';
+	$album_id = '986849758059867';
+	$limit = '8';
+	$token = '1785950408309369|Krh-XMmZWhmuKR9QCqnNBSruCNs';
+	$img_alt = 'KKC創立15周年記念講演会（第30回交流会）の写真';
+	$album_url = '//www.facebook.com/kkchiroshima/photos/?tab=album&album_id=' . $album_id;
+	$json = file_get_contents( 'https://graph.facebook.com/' . $album_id . '/photos?limit=' . $limit . '&access_token=' . $token );
+	$json = json_decode( $json );
+	if ( isset( $json ) ) :
+	foreach ( $json->data as $item ) {
+		echo '<div class="column small-12 medium-6 large-3">',
+			'<figure><img src="//graph.facebook.com/', $item->id, '/picture?size=normal" alt="', $img_alt, '">',
+		'<figcaption><div class="caption-content">',
+			'<a href="', $album_url, '" title="Facebookで見る" rel="nofollow" target="_blank">',
+			'<span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br>',
+			'<p>Facebookで公開しています！</p>',
+		'</div></figcaption>',
+		'</figure></div>';
+	}
+	endif;
+?>
+</section>
+<section id="go-fb">
+	<div class="row">
+		<div class="column text-center fadeInDown">
+			<h2>Facebookで、もっと見る</h2>
+			<p><a href="//www.facebook.com/kkchiroshima" class="fb-btn" target="_blank" rel="nofollow" title="KKCのFacebookページを見る"><span><i class="fa fa-facebook"></i>Facebook</span></a></p>
+		</div>
+	</div>
+</section>
 <section id="hello">
 	<div class="row">
 		<h2 class="column small-12 text-center">理事長のご挨拶</h2>
@@ -59,21 +93,44 @@ ob_start();
 		</div>
 	</div>
 </section>
-<section id="fb-gallary" class="row expanded">
-<?php
-	$album_id = '986849758059867';
-	$limit = '8';
-	$token = 'EAAZAYTZCusenkBAMlYGXhJ2TlpJbaenCN3qFn8MZBEJZAN7mhGfsVClM7fbACftCzxsVYcKZABPxEvMFDsbOybx9hXwVqpaq5aAj2RITW6YO5cQZA5IQlAqFZADcEzAQTJXQc4GIJFVO3SMG7lYpen4SZCdyKGgZASe5AAOQj18weZAgZDZD';
-	$img_alt = 'KKC創立15周年記念講演会（第30回交流会）の写真';
-	$json = file_get_contents( 'https://graph.facebook.com/' . $album_id . '/photos?limit=' . $limit . '&access_token=' . $token );
-	$json = json_encode( $json );
-	var_dump( $json );
-	$fb_photos = $json['data'];
-	var_dump( $fb_photos );
-	foreach ( $fb_photos as $img ) {
-		echo '<div class="column small-6 medium-4 large-3"><img src="//graph.facebook.com/', $img[id], '/picture?type=normal" title="', $img_alt, '"></div>';
-	}
-?>
+<section id="news-event">
+	<div class="row">
+		<h2 class="column small-12 text-center">お知らせ</h2>
+		<div class="column small-12">
+		<?php
+			$args = array(
+				'posts_per_page' => '5',
+				'post_status'    => 'publish'
+			);
+			$posts = new WP_Query( $args );
+			if ( $posts->have_posts() ): while ( $posts->have_posts() ) : $posts->the_post();
+		?>
+			<div class="post-list row align-middle">
+				<div class="post-container column small-12">
+					<p class="info-box"><time datetime="<?php the_time( 'c' ); ?>" itemprop="datePublished"><?php the_date( 'Y.m.d' ); ?></time><?php the_category( ' ', 'multiple', false ); ?><span class="new-label">New</span></p>
+					<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+					<div class="row">
+					<?php
+						if ( dtdsh_thumbnail() !== 'none' ) :
+					?>
+						<div class="column small-4"><?php dtdsh_thumbnail(); ?></div>
+						<div class="column small-8"><?php the_excerpt(); ?></div>
+					<?php
+						else:
+					?>
+						<div class="column"><?php the_excerpt(); ?></div>
+					<?php
+						endif;
+					?>
+					</div>
+				</div>
+			</div>
+		<?php
+			endwhile;
+			endif;
+		?>
+		</div>
+	</div>
 </section>
 <?php
 $front = ob_get_contents();

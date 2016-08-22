@@ -24,6 +24,7 @@ function kkc_theme() {
 	require_once( TFUNC . 'headfunc.php' );
 	require_once( TFUNC . 'footfunc.php' );
 	require_once( TFUNC . 'video-thumbnail.php' );
+	require_once( TFUNC . 'dtdsh-thumbnail.php' );
 	include_once( TFUNC . 'login-customize.php' );
 }
 add_action( 'after_setup_theme', 'kkc_theme' );

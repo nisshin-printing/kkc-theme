@@ -1,8 +1,8 @@
 <footer>
 </footer>
+<div id="overlay"></div>
 <?php
 	wp_footer();
 ?>
-		<div id="overlay"></div>
 	</body>
 </html>
