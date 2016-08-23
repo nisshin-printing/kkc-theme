@@ -78,7 +78,7 @@ ob_start();
 	<div class="row">
 		<div class="column text-center fadeInDown">
 			<h2>Facebookで、もっと見る</h2>
-			<p><a href="//www.facebook.com/kkchiroshima" class="fb-btn" target="_blank" rel="nofollow" title="KKCのFacebookページを見る"><span><i class="fa fa-facebook"></i>Facebook</span></a></p>
+			<p><a href="https://www.facebook.com/kkchiroshima" class="fb-btn" target="_blank" rel="nofollow" title="KKCのFacebookページを見る"><span><i class="fa fa-facebook"></i>Facebook</span></a></p>
 		</div>
 	</div>
 </section>

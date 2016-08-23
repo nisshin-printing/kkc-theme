@@ -126,6 +126,11 @@
 		font-size: 1rem !important;
 		text-decoration: none;
 	}
+	@include breakpoint( 370px down ) {
+		display: none;
+		opacity: 0;
+		visibility: hidden;
+	}
 }
 //========================  Page Header ========================================================================//
 #pageheader {

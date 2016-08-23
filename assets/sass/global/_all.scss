@@ -16,11 +16,6 @@ svg {
 svg:not(:root) {
 	overflow: hidden;
 }
-.button {
-	font-family: $main-font;
-	font-weight: normal;
-	text-decoration: none;
-}
 // 外部リンク
 .link-external {
 	display: inline-block;

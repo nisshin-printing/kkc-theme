@@ -14,7 +14,7 @@ wp_head();
 	<div id="topbar" class="top-bar" role="navigation">
 		<div class="row">
 			<div class="column">
-				<div id="btn-menu" data-responsive-toggle="responsive-menu" data-hide-for="large">
+				<div id="btn-menu" class="hide-for-large" data-responsive-toggle="responsive-menu" data-hide-for="large">
 					<button data-toggle type="button">
 						<span class="toggle-icon menu-icon">
 							<svg role="image" class="icon">
@@ -40,7 +40,7 @@ wp_head();
 	<header id="pageheader">
 		<div class="row">
 			<div class="column">
-				<div class="kkc-logo"><a href="<?php echo DTDSH_HOME_URL; ?>" title="<?php echo DTDSH_SITENAME; ?>" rel="home"><img src="<?php echo TIMG, 'logo/favicon-48.png'; ?>" alt="<?php echo DTDSH_SITENAME; ?>"><img src="<?php echo TIMG, 'logo-white.png'; ?>" alt="<?php echo DTDSH_SITENAME; ?>"></a></div>
+				<div class="kkc-logo"><a href="<?php echo DTDSH_HOME_URL; ?>" title="<?php echo DTDSH_SITENAME; ?>" rel="home"><img src="<?php echo TIMG, 'logo-white.png'; ?>" alt="<?php echo DTDSH_SITENAME; ?>"></a></div>
 			</div>
 		</div>
 	</header>

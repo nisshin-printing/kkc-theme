@@ -7,6 +7,11 @@ $font: '../font/';
 @import 'color-settings';
 @import 'foundation/settings/settings';
 @import 'foundation';
+
+// Add Styles for Frameworks
+@import 'ff/button';
+
+// Foundation Include
 @include foundation-global-styles;
 // @include foundation-grid;
 @include foundation-flex-grid;
@@ -58,7 +63,6 @@ $font: '../font/';
 
 // Add Styles for Frameworks
 @import 'ff/accordion';
-@import 'ff/button';
 @import 'ff/button-group';
 @import 'ff/card';
 @import 'ff/sub-nav';
@@ -71,6 +75,7 @@ $font: '../font/';
 // Global
 @import 'global/all';
 @import 'global/header';
+@import 'global/footer';
 
 // Front Page
 @import 'frontpage';
