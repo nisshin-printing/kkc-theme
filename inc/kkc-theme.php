@@ -26,6 +26,8 @@ function kkc_theme() {
 	require_once( TFUNC . 'video-thumbnail.php' );
 	require_once( TFUNC . 'dtdsh-thumbnail.php' );
 	include_once( TFUNC . 'login-customize.php' );
+	// Countdown Timer
+	include_once( TFUNC . 'dtdsh-countdownTimer.php' );
 }
 add_action( 'after_setup_theme', 'kkc_theme' );
 endif;

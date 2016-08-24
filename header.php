@@ -47,7 +47,7 @@ wp_head();
 	<section id="hero" class="row expanded align-middle" style="background-image: url(<?php echo TIMG, 'hero-01.jpg'; ?>);">
 		<div class="texture-overlay"></div>
 		<div class="column text-center">
-			<h1 class="animated fadeInDown text-right">主催したイベント　<b>42</b>回<br>講演者　<b>57</b>名<br>紹介したベンチャー企業　<b>94</b>社</h1>
+			<h1 class="animated fadeInDown text-right">主催したイベント　<b>52</b>回<br>講演者　<b>64</b>名<br>紹介したベンチャー企業　<b>129</b>社</h1>
 		</div>
-		<p class="text-right">※平成28年8月16日現在</p>
+		<p class="text-right">※平成28年9月現在</p>
 	</section>

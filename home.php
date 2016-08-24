@@ -6,7 +6,7 @@ ob_start();
 <section id="next-event">
 	<div class="row">
 		<p class="date-info column small-12"><span class="label">次回</span>平成28年10月22日</p>
-		<h2 class="column small-12 text-center">第32回起業家・投資家・専門家「お見合い」交流会</h2>
+		<h2 class="column small-12 text-center">第31回起業家・投資家・専門家「お見合い」交流会</h2>
 	</div>
 	<div class="row" id="countdown-timer">
 		<div class="column small-12 medium-12 large-6">
@@ -15,7 +15,7 @@ ob_start();
 			<p class="event-desc">独創的なアイディアを持つベンチャー企業や起業家のプレゼンテーションが見られる！ベンチャー起業や起業家、投資家（エンジェル）や専門家と出会える「場」が「お見合い」交流会です。</p>
 		</div>
 		<div class="column small-12 medium-12 large-6">
-			<ul class="timervalue" data-cdt="1471636800">
+			<ul class="timervalue" data-cdt="1472656800">
 				<li><span class="timer-name name-days">DAYS</span><span class="timer-number number-days"></span></li>
 				<li><span class="timer-name name-hours">HOURS</span><span class="timer-number number-hours"></span></li>
 				<li><span class="timer-name name-minutes">MINUTES</span><span class="timer-number number-minutes"></span></li>
@@ -29,7 +29,7 @@ ob_start();
 	<div class="row align-middle">
 		<h2 class="column small-12 text-center">KKCについて<span>― 広島経済活性化推進倶楽部 ―</span></h2>
 		<div class="column small-12 medium-6">
-			<p class="text-center flex-video"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fkkchiroshima%2Fvideos%2F421955867922285%2F&width=400&show_text=true&appId=1469026710042384&height=367" width="400" height="367" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></p>
+			<p class="text-center flex-video"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fkkchiroshima%2Fvideos%2F1027961010615408%2F&width=400&show_text=false&appId=1785950408309369&height=225" width="400" height="225" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></p>
 		</div>
 		<div class="column small-12 medium-6">
 			<p>広島経済活性化推進倶楽部は、広島を中心をする弁護士、税理士、司法書士、弁理士、中小企業診断士、事業家などの有志によって設立された特定非営利活動法人です。</p>
@@ -68,7 +68,7 @@ ob_start();
 			'<a href="', $album_url, '" title="Facebookで見る" rel="nofollow" target="_blank">',
 			'<span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br>',
 			'<p>Facebookで公開しています！</p>',
-		'</div></figcaption>',
+		'</div></a></figcaption>',
 		'</figure></div>';
 	}
 	endif;
