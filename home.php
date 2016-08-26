@@ -12,7 +12,7 @@ ob_start();
 		<div class="column small-12 medium-12 large-6">
 			<p class="where-info"><a href="http://www.mighty.co.jp/shin-ai-building/highbuilding/access.html" target="_blank" rel="nofollow" title="ひろしまハイビル21">ひろしまハイビル21</a></p>
 			<p class="where-desc color-gainsboro">広島市中区銀山町3-1</p>
-			<p class="event-desc">独創的なアイディアを持つベンチャー企業や起業家のプレゼンテーションが見られる！ベンチャー起業や起業家、投資家（エンジェル）や専門家と出会える「場」が「お見合い」交流会です。</p>
+			<p class="event-desc">新事業に挑戦するベンチャー起業家とそれを支える投資家（エンジェル）・専門家、そして、一般市民の交流の場です。刺激を受け勉強になることは間違いありません。学生参加も大歓迎。新たなイノベーションのスタートの場にあなたも立ち会いませんか。</p>
 		</div>
 		<div class="column small-12 medium-12 large-6">
 			<ul class="timervalue" data-cdt="1472656800">
@@ -65,7 +65,7 @@ ob_start();
 		<h2 class="column small-12 text-center">起業家・投資家・専門家お見合い交流会</h2>
 		<div class="column small-12 medium-6 text-center"><img src="<?php echo TIMG, 'scheme.gif'; ?>" alt="広島で開催される起業家・投資家・専門家お見合い交流会とは？"></div>
 		<div class="column small-12 medium-6">
-			<p>新事業に挑戦するベンチャー起業家とそれを支える投資家（エンジェル）・専門家、そして、一般市民の交流の場です。刺激を受け勉強になることは間違いありません。学生参加も大歓迎。新たなイノベーションのスタートの場にあなたも立ち会いませんか。</p>
+			<p>KKCでは、独創的な事業に取り組む起業家と、これを支援する投資家（エンジェル）および専門家とが集う「場」として、お見合い交流会を開催しています。この<span class="bg-line">「場」を通じた起業家と投資家および専門家の新たな出会いの中で、出資、経営支援、販路拡大、業務提携などの成果</span>が生まれています。これまでのお見合い交流会を契機とする発表企業への出資総額は<span class="bg-line">１億円</span>を超えています（事務局調べ）。</p>
 			<p><a href="#" class="button expanded waves-effect" title="お見合い交流会に参加する">お見合い交流会に参加する</a></p>
 		</div>
 	</div>
