@@ -168,17 +168,16 @@
 		height: 100%;
 		background-image: url(#{$imgfolder}grid.png);
 	}
-	h1 {
-		display: inline-block;
-		margin: 0 auto;
-	}
-	> .column,
-	> .text-right {
-		z-index: 10;
-	}
-	> .text-right {
+	svg {
+		fill: #FFF;
 		position: absolute;
-		right: 1rem;
+		top: 0;
+		left: 0;
+		right: 0;
 		bottom: 0;
+		margin: auto;
+		width: 100%;
+		max-width: 50%;
+		z-index: 10;
 	}
 }

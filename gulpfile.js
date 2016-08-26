@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	$ = require('gulp-load-plugins')(),
 	pngquant = require('imagemin-pngquant'),
+	fs = require('pn/fs'),
 	browserSync = require('browser-sync');
 
 var theme = {
@@ -68,8 +69,8 @@ gulp.task('svg2png', function() {
 	}))
 		.pipe($.svg2png())
 		.pipe($.rename({
-		prefix: 'icons.svg.'
-	}))
+			prefix: 'icons.svg.'
+		}))
 		.pipe($.imagemin())
 		.pipe(gulp.dest(theme.svg));
 });

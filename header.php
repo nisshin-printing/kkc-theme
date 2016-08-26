@@ -44,10 +44,9 @@ wp_head();
 			</div>
 		</div>
 	</header>
-	<section id="hero" class="row expanded align-middle" style="background-image: url(<?php echo TIMG, 'hero-01.jpg'; ?>);">
+	<section id="hero" style="background-image: url(<?php echo TIMG, 'home/hero-01.jpg'; ?>);">
 		<div class="texture-overlay"></div>
-		<div class="column text-center">
-			<h1 class="animated fadeInDown text-right">主催したイベント　<b>52</b>回<br>講演者　<b>64</b>名<br>紹介したベンチャー企業　<b>129</b>社</h1>
-		</div>
-		<p class="text-right">※平成28年9月現在</p>
+		<svg role="image" class="icon">
+			<use xlink:href="<?php echo USVG, 'hero-title'; ?>"></use>
+		</svg>
 	</section>

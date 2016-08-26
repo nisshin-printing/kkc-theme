@@ -9,40 +9,40 @@ function dtdsh_create_title() {
 	if ( ! is_front_page() && ! is_home() ) {
 		if ( is_search() ) {
 			$head_title =  '「' . get_search_query() . '」で検索した結果';
-			$head_description = '「' . get_search_query() . '」で検索した結果の一覧ページです。探しているのはコンテンツですか？それとも「頼れる」広島の弁護士ですか？「無料相談」「弁護士指名制度」「チーム制」「プライバシー保護」など中四国最大規模で最善の解決へ導きます。弁護士の業務広告に関する規定に違反する疑いのある裏付けのない「ナンバーワン」「専門制」「特化」などの言葉にご注意ください。';
+			$head_description = '「' . get_search_query() . '」で検索した結果の一覧ページです。';
 		} elseif ( is_archive() ) {
 			if ( is_day() ) {
-				$head_title = 'アーカイブ : ' . get_the_date( 'Y年m月d日' ) . 'の一覧 | 広島の弁護士による無料相談 - 山下江法律事務所';
-				$head_description = get_the_date( 'Y年m月d日' ) . 'の記事一覧ページです。探しているのは記事ですか？それとも「頼れる」広島の弁護士ですか？「無料相談」「弁護士指名制度」「チーム制」「プライバシー保護」など中四国最大規模で最善の解決へ導きます。弁護士の業務広告に関する規定に違反する疑いのある裏付けのない「ナンバーワン」「専門制」「特化」などの言葉にご注意ください。';
+				$head_title = 'アーカイブ : ' . get_the_date( 'Y年m月d日' ) . 'の一覧 | 広島経済活性化推進倶楽部 - KKC';
+				$head_description = get_the_date( 'Y年m月d日' ) . 'の記事一覧ページです。';
 			} elseif ( is_month() ) {
-				$head_title = 'アーカイブ : ' . get_the_date( 'Y年m月' ) . 'の一覧 | 広島の弁護士による無料相談 - 山下江法律事務所';
-				$head_description = get_the_date( 'Y年m月' ) . 'の記事一覧ページです。探しているのは記事ですか？それとも「頼れる」広島の弁護士ですか？「無料相談」「弁護士指名制度」「チーム制」「プライバシー保護」など中四国最大規模で最善の解決へ導きます。弁護士の業務広告に関する規定に違反する疑いのある裏付けのない「ナンバーワン」「専門制」「特化」などの言葉にご注意ください。';
+				$head_title = 'アーカイブ : ' . get_the_date( 'Y年m月' ) . 'の一覧 | 広島経済活性化推進倶楽部 - KKC';
+				$head_description = get_the_date( 'Y年m月' ) . 'の記事一覧ページです。';
 			} elseif ( is_year() ) {
-				$head_title = 'アーカイブ : ' . get_the_date( 'Y年' ) . 'の一覧 | 広島の弁護士による無料相談 - 山下江法律事務所';
-				$head_description = get_the_date( 'Y年' ) . 'の記事一覧ページです。探しているのは記事ですか？それとも「頼れる」広島の弁護士ですか？「無料相談」「弁護士指名制度」「チーム制」「プライバシー保護」など中四国最大規模で最善の解決へ導きます。弁護士の業務広告に関する規定に違反する疑いのある裏付けのない「ナンバーワン」「専門制」「特化」などの言葉にご注意ください。';
+				$head_title = 'アーカイブ : ' . get_the_date( 'Y年' ) . 'の一覧 | 広島経済活性化推進倶楽部 - KKC';
+				$head_description = get_the_date( 'Y年' ) . 'の記事一覧ページです。';
 			} elseif ( is_tag() ) {
-				$head_title = 'タグ : ' . single_term_title( '', false ) . 'の一覧 | 広島の弁護士による無料相談 - 山下江法律事務所';
-				$head_description = 'タグ : ' . single_term_title( '', false ) . 'の記事一覧ページです。探しているのは記事ですか？それとも「頼れる」広島の弁護士ですか？「無料相談」「弁護士指名制度」「チーム制」「プライバシー保護」など中四国最大規模で最善の解決へ導きます。弁護士の業務広告に関する規定に違反する疑いのある裏付けのない「ナンバーワン」「専門制」「特化」などの言葉にご注意ください。';
+				$head_title = 'タグ : ' . single_term_title( '', false ) . 'の一覧 | 広島経済活性化推進倶楽部 - KKC';
+				$head_description = 'タグ : ' . single_term_title( '', false ) . 'の記事一覧ページです。';
 			} elseif ( is_category() || is_tax() ) {
-				$head_title = 'カテゴリー : ' . single_term_title( '', false ) . 'の一覧 | 広島の弁護士による無料相談 - 山下江法律事務所';
-				$head_description = 'カテゴリ : ' . single_term_title( '', false ) . 'の記事一覧ページです。探しているのは記事ですか？それとも「頼れる」広島の弁護士ですか？「無料相談」「弁護士指名制度」「チーム制」「プライバシー保護」など中四国最大規模で最善の解決へ導きます。弁護士の業務広告に関する規定に違反する疑いのある裏付けのない「ナンバーワン」「専門制」「特化」などの言葉にご注意ください。';
+				$head_title = 'カテゴリー : ' . single_term_title( '', false ) . 'の一覧 | 広島経済活性化推進倶楽部 - KKC';
+				$head_description = 'カテゴリ : ' . single_term_title( '', false ) . 'の記事一覧ページです。';
 			} else {
-				$head_title = post_type_archive_title( '', false ) . 'の一覧 | 広島の弁護士による無料相談 - 山下江法律事務所';
-				$head_description = post_type_archive_title( '', false ) . 'の記事一覧ページです。探しているのは記事ですか？それとも「頼れる」広島の弁護士ですか？「無料相談」「弁護士指名制度」「チーム制」「プライバシー保護」など中四国最大規模で最善の解決へ導きます。弁護士の業務広告に関する規定に違反する疑いのある裏付けのない「ナンバーワン」「専門制」「特化」などの言葉にご注意ください。';
+				$head_title = post_type_archive_title( '', false ) . 'の一覧 | 広島経済活性化推進倶楽部 - KKC';
+				$head_description = post_type_archive_title( '', false ) . 'の記事一覧ページです。';
 			}
 		} elseif ( is_single() || is_page() ) {
-			$head_title = single_post_title( '', false ) . ' | 広島の弁護士による無料相談 - 山下江法律事務所';
+			$head_title = single_post_title( '', false ) . ' | 広島経済活性化推進倶楽部 - KKC';
 			$head_description = get_the_excerpt();
 		} elseif ( is_404() ) {
-			$head_title = 'ページが見つかりません！ | 広島の弁護士による無料相談 - 山下江法律事務所';
-			$head_description = 'ページが見つかりません！探しているのは記事ですか？それとも「頼れる」広島の弁護士ですか？「無料相談」「弁護士指名制度」「チーム制」「プライバシー保護」など中四国最大規模で最善の解決へ導きます。弁護士の業務広告に関する規定に違反する疑いのある裏付けのない「ナンバーワン」「専門制」「特化」などの言葉にご注意ください。';
+			$head_title = 'ページが見つかりません！ | 広島経済活性化推進倶楽部 - KKC';
+			$head_description = 'ページが見つかりません！';
 		} else {
-			$head_title = '山下江法律事務所 - 広島の弁護士による無料相談';
-			$head_description = '探しているのは「頼れる」広島の弁護士。「無料相談」「弁護士指名制度」「チーム制」「プライバシー保護」など中四国最大規模で最善の解決へ導きます。弁護士の業務広告に関する規定に違反する疑いのある裏付けのない「ナンバーワン」「専門制」「特化」などの言葉にご注意ください。';
+			$head_title = '広島経済活性化推進倶楽部 - KKC';
+			$head_description = '';
 		}
 	} else {
-		$head_title = '山下江法律事務所 - 広島の弁護士による無料相談';
-		$head_description = '探しているのは「頼れる」広島の弁護士。「無料相談」「弁護士指名制度」「チーム制」「プライバシー保護」など中四国最大規模で最善の解決へ導きます。弁護士の業務広告に関する規定に違反する疑いのある裏付けのない「ナンバーワン」「専門制」「特化」などの言葉にご注意ください。';
+		$head_title = '広島経済活性化推進倶楽部 - KKC';
+		$head_description = '';
 	}
 	$ret = '<title>' . $head_title . '</title><meta name="description" content="' . $head_description .'">';
 	return $ret;

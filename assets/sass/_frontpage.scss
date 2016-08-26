@@ -65,6 +65,24 @@
 		font-size: 1rem;
 		margin: .5rem auto;
 	}
+	.item-performance {
+		padding: {
+			top: 40px;
+			bottom: 40px;
+		}
+		text-align: center;
+		h3 {
+			margin: 2rem auto 0;
+			font-size: 1.5rem;
+			span {
+				font: {
+					size: 3rem;
+					weight: bold;
+				}
+				color: $blue;
+			}
+		}
+	}
 	div.column {
 		padding: {
 			top: 40px;

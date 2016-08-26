@@ -26,10 +26,32 @@ ob_start();
 	</div>
 </section>
 <section id="about-kkc">
-	<div class="row align-middle">
+	<div class="row">
 		<h2 class="column small-12 text-center">KKCについて<span>― 広島経済活性化推進倶楽部 ―</span></h2>
+	</div>
+	<div class="row">
+		<div class="column small-12 medium-4 item-performance">
+			<svg role="image" class="icon">
+				<use xlink:href="<?php echo USVG, 'holding-event'; ?>"></use>
+			</svg>
+			<h3>主催したイベント<br><span>52</span>回</h3>
+			<p><a href="#" class="button expanded waves-effect" title="過去のお見合い交流会">過去のお見合い交流会を見る</a></p>
+		</div>
+		<div class="column small-12 medium-4 item-performance color-">
+			<svg role="image" class="icon">
+				<use xlink:href="<?php echo USVG, 'speech'; ?>"></use>
+			</svg>
+			<h3>講演者<br><span>64</span>名</h3>
+		</div>
+		<div class="column small-12 medium-4 item-performance">
+			<svg role="image" class="icon">
+				<use xlink:href="<?php echo USVG, 'presentation-01'; ?>"></use>
+			</svg>
+			<h3>紹介したベンチャー企業<br><span>129</span>社</h3>
+			<p><a href="#" class="button expanded waves-effect" title="発表企業の活動状況">発表企業の活動状況を見る</a></p>
+		</div>
 		<div class="column small-12 medium-6">
-			<p class="text-center flex-video"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fkkchiroshima%2Fvideos%2F1027961010615408%2F&width=400&show_text=false&appId=1785950408309369&height=225" width="400" height="225" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></p>
+			<p class="text-center flex-video"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fkkchiroshima%2Fvideos%2F1027961010615408%2F&width=500&show_text=false&appId=1785950408309369&height=281" width="500" height="281" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></p>
 		</div>
 		<div class="column small-12 medium-6">
 			<p>広島経済活性化推進倶楽部は、広島を中心をする弁護士、税理士、司法書士、弁理士、中小企業診断士、事業家などの有志によって設立された特定非営利活動法人です。</p>
@@ -43,7 +65,7 @@ ob_start();
 		<h2 class="column small-12 text-center">起業家・投資家・専門家お見合い交流会</h2>
 		<div class="column small-12 medium-6 text-center"><img src="<?php echo TIMG, 'scheme.gif'; ?>" alt="広島で開催される起業家・投資家・専門家お見合い交流会とは？"></div>
 		<div class="column small-12 medium-6">
-			<p>KKCでは、独創的な事業に取り組む起業家と、これを支援する投資家（エンジェル）および専門家とが集う「場」として、お見合い交流会を開催しています。この<span class="bg-line">「場」を通じた起業家と投資家および専門家の新たな出会いの中で、出資、経営支援、販路拡大、業務提携などの成果</span>が生まれています。これまでのお見合い交流会を契機とする発表企業への出資総額は<span class="bg-line">１億円</span>を超えています（事務局調べ）。 </p>
+			<p>新事業に挑戦するベンチャー起業家とそれを支える投資家（エンジェル）・専門家、そして、一般市民の交流の場です。刺激を受け勉強になることは間違いありません。学生参加も大歓迎。新たなイノベーションのスタートの場にあなたも立ち会いませんか。</p>
 			<p><a href="#" class="button expanded waves-effect" title="お見合い交流会に参加する">お見合い交流会に参加する</a></p>
 		</div>
 	</div>
@@ -85,7 +107,7 @@ ob_start();
 <section id="hello">
 	<div class="row">
 		<h2 class="column small-12 text-center">理事長のご挨拶</h2>
-		<div class="column small-12 medium-3 text-center"><img src="<?php echo TIMG, 'yamashita-top.jpg'; ?>" alt="KKCの理事長の写真"></div>
+		<div class="column small-12 medium-3 text-center"><img src="<?php echo TIMG, 'home/yamashita-top.jpg'; ?>" alt="KKCの理事長の写真"></div>
 		<div class="column small-12 medium-9">
 			<h3>求む、挑戦者</h3>
 			<p>私が方針としたいことは、ベンチャー企業とエンジェル（投資家）、そして、経・営・法などの専門家の三者のマッチングにより広島を中心とした経済の活性化を図っていくことです。...</p>
