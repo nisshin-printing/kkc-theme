@@ -55,7 +55,48 @@ ob_start();
 			<span class="p-number">３</span><p class="-big">モデライズ株式会社（東京）代表取締役社長兼CEO 高村淳による<span class="-big -block -bold">「人工知能技術によるスマート・データサイエンス事業」</span></p>
 		</div>
 		<h3>起業家・投資家・専門家に出会える！懇親会</h3>
-		<div class="-indent"><p class="-big">野村総合研究所の三本松進氏による<span class="-big -block -bold">「最新！ベンチャー動向と次世代ビジネスモデル」</span></p></div>
+	</div>
+</div>
+<div id="fb-gallary" class="row">
+	<div class="column small-12 medium-6">
+		<figure>
+			<img src="<?php echo TIMG, 'lp/seminar-01.jpg'; ?>" alt="懇親会の写真">
+			<figcaption>
+				<div class="caption-content"><a href="', $album_url, '" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
+			</figcaption>
+		</figure>
+	</div>
+	<div class="column small-12 medium-6">
+		<figure>
+			<img src="<?php echo TIMG, 'lp/seminar-02.jpg'; ?>" alt="懇親会の写真">
+			<figcaption>
+				<div class="caption-content"><a href="', $album_url, '" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
+			</figcaption>
+		</figure>
+	</div>
+	<div class="column small-12 medium-6">
+		<figure>
+			<img src="<?php echo TIMG, 'lp/seminar-03.jpg'; ?>" alt="懇親会の写真">
+			<figcaption>
+				<div class="caption-content"><a href="', $album_url, '" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
+			</figcaption>
+		</figure>
+	</div>
+	<div class="column small-12 medium-6">
+		<figure>
+			<img src="<?php echo TIMG, 'lp/seminar-04.jpg'; ?>" alt="懇親会の写真">
+			<figcaption>
+				<div class="caption-content"><a href="', $album_url, '" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
+			</figcaption>
+		</figure>
+	</div>
+</div>
+<div class="row mt3 mb3">
+	<div class="column">
+		<h2 class="title-about -bold"><span class="-big">講師</span>の<span class="-big">紹介</h2>
+		<div class="-indent">
+			<h3 class="bb1">三本松進氏　野村総合研究所 未来創発センター主席研究員</h3>
+		</div>
 	</div>
 </div>
 <?php

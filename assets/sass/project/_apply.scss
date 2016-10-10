@@ -3,7 +3,9 @@
 		margin: 0 auto;
 	}
 	.-big {
-		font-size: 1.5em;
+		@include breakpoint(medium) {
+			font-size: 1.2em;
+		}
 	}
 	.-bold {
 		font-weight: bold;
@@ -12,7 +14,9 @@
 		display: block;
 	}
 	.-indent {
-		padding: 2rem;
+		@include breakpoint(medium) {
+			padding: 2rem;
+		}
 	}
 	h3 {
 		@extend .-bold;
@@ -24,5 +28,6 @@
 		float: left;
 		font-size: 4rem;
 		color: $primary-color;
+		margin-right: 1rem;
 	}
 }
