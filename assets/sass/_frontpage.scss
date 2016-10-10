@@ -24,6 +24,9 @@
 		top: 40px;
 		bottom: 40px;
 	}
+	.data-info > .label {
+		margin-right: .8rem;
+	}
 	.timervalue {
 		@extend .no-bullet;
 		color: #FFF;

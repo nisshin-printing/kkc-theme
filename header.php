@@ -44,9 +44,11 @@ wp_head();
 			</div>
 		</div>
 	</header>
-	<section id="hero" style="background-image: url(<?php echo TIMG, 'home/hero-01.jpg'; ?>);">
-		<div class="texture-overlay"></div>
-		<svg role="image" class="icon">
-			<use xlink:href="<?php echo USVG, 'hero-title'; ?>"></use>
-		</svg>
-	</section>
+<?php
+	if ( is_page( 'apply' ) ) {
+		echo '<h1 id="hero" style="background-image: url(', TIMG, 'lp/page-apply.png), linear-gradient(to left, rgba(0,0,0,.2), rgba(0,0,0,.2)), url(', TIMG, 'lp/hero-seminar.jpg);background-size: contain, cover, cover;"></h1>';
+	} else {
+		echo '<section id="hero" style="background-image: url(', TIMG, 'home/hero-01.jpg);background-attachment: fixed;"><div class="texture-overlay"></div><svg role="image" class="icon">
+			<use xlink:href="', USVG, 'hero-title"></use></svg></section>';
+	}
+?>

@@ -1,0 +1,28 @@
+.page-template-page-apply {
+	h1 {
+		margin: 0 auto;
+	}
+	.-big {
+		font-size: 1.5em;
+	}
+	.-bold {
+		font-weight: bold;
+	}
+	.-block {
+		display: block;
+	}
+	.-indent {
+		padding: 2rem;
+	}
+	h3 {
+		@extend .-bold;
+		border-left: 5px solid $primary-color;
+		padding-left: 1rem;
+		margin: 1em 0 0;
+	}
+	.p-number {
+		float: left;
+		font-size: 4rem;
+		color: $primary-color;
+	}
+}

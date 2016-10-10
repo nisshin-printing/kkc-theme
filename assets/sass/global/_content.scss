@@ -1,0 +1,23 @@
+.article-body {
+	padding: 30px 0;
+	h1 {
+		font-weight: bold;
+		color: $primary-color;
+		border-bottom: 1px solid $primary-color;
+		margin-bottom: 30px;
+		@include breakpoint(small) {
+			font-size: rem-calc(map-get(map-get($header-sizes, 'small'), 'h2'));
+		}
+		@include breakpoint(medium) {
+			font-size: rem-calc(map-get(map-get($header-sizes, 'medium'), 'h2'));
+		}
+	}
+	h2 {
+		@include breakpoint(small) {
+			font-size: rem-calc(map-get(map-get($header-sizes, 'small'), 'h3'));
+		}
+		@include breakpoint(medium) {
+			font-size: rem-calc(map-get(map-get($header-sizes, 'medium'), 'h3'));
+		}
+	}
+}

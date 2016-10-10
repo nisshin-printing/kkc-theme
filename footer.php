@@ -28,6 +28,7 @@
 					'menu_class' => 'menu',
 					'container' => 'nav',
 					'theme_lacation' => '',
+					'depth' => 1
 				);
 				wp_nav_menu( $args );
 				?>
@@ -45,7 +46,7 @@
 					<a href="#" class="button secondary waves-effect" title="プレゼン企業エントリー">プレゼン企業エントリー</a>
 					<a href="#" class="button waves-effect" title="お見合い交流会へ参加">お見合い交流会へ参加</a>
 				</p>
-				<p class="coryright-text">Copyright <?php echo date( 'Y' ); ?> <a href="dtdsh.com">日進印刷株式会社</a>.</p>
+				<p class="coryright-text">Copyright <?php echo date( 'Y' ); ?> <a href="http://dtdsh.com">日進印刷株式会社</a>.</p>
 			</div>
 			<div class="show-for-large">
 				<p>KKCからの情報を受け取る</p>

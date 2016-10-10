@@ -2,17 +2,28 @@
 #topbar {
 	background-color: #FFF;
 	color: #000;
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	z-index: 500;
+	width: 100%;
 	height: 60px;
 	transition: all .3s ease-in-out !important;
+	transform: translateY(0);
+	&.is-unpinned {
+		transform: translateY(-100%);
+	}
 	.menu {
+		background-color: #FFF;
+		@include breakpoint(medium down) {
+			background-color: transparent;
+		}
 		li {
 			height: 60px;
 		}
 		a {
 			color: currentColor;
-			background-color: transparent;
 			text-decoration: none;
 			&:hover {
 				color: $primary-color;
@@ -94,6 +105,7 @@
 	opacity: 0;
 }
 .active-overlay {
+	overflow: hidden;
 	#btn-menu {
 		svg {
 			visibility: visible;
@@ -140,10 +152,13 @@
 	left: 0;
 	width: 100%;
 	.kkc-logo {
-		padding: 65px 0 0;
+		padding: 30px 0 0;
 		padding-left: 5px;
 		display: inline-block;
 	}
+}
+.home .kkc-logo {
+	padding-top: 40px;
 }
 //========================  Header Hero ========================================================================//
 #hero {
@@ -151,8 +166,9 @@
 	z-index: 1;
 	width: 100%;
 	height: 100%;
+	margin-top: 60px;
 	padding-top: 60px;
-	max-height: 500px;
+	max-height: 300px;
 	background: {
 		repeat: no-repeat;
 		position: center center;
@@ -177,8 +193,17 @@
 		bottom: 0;
 		margin: auto;
 		width: 100%;
-		max-width: 50%;
 		z-index: 10;
 		opacity: .8;
+		@include breakpoint(medium down) {
+			max-width: 90%;
+		}
+		@include breakpoint(large) {
+			max-width: 50%;
+		}
 	}
+}
+.home #hero,
+.page-template-page-apply #hero {
+	max-height: 500px;
 }

@@ -1,15 +1,16 @@
 // Global Settings
-$main-font: 'Quicksand', '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-$noto-font: 'Quicksand', 'Noto Sans Japanese', '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$noto-font: 'Quicksand', 'ipaexg','Noto Sans Japanese', '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 $imgfolder: '../img/';
 $font: '../font/';
 // Frame Works Import
 @import 'color-settings';
-@import 'foundation/settings/settings';
-@import 'foundation';
 
-// Add Styles for Frameworks
-@import 'ff/button';
+// Fonts
+@import 'fonts/font-awesome';
+@import 'fonts/font-include';
+
+@import 'foundation-settings';
+@import 'foundation';
 
 // Foundation Include
 @include foundation-global-styles;
@@ -51,31 +52,24 @@ $font: '../font/';
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
+// Frameworks
 @import 'mixin';
 @import 'framework/uiGradients';
 @import 'animate';
 @import 'framework/waves';
-@import 'framework/cards';
-@import 'framework/slick-slider';
-@import 'framework/valign-column';
-@import 'framework/tables';
-@import 'framework/fullscreen-form';
 
-// Add Styles for Frameworks
-@import 'ff/accordion';
-@import 'ff/button-group';
-@import 'ff/card';
-@import 'ff/sub-nav';
-@import 'ff/reveal';
 
-// Fonts
-@import 'fonts/font-awesome';
-@import 'fonts/font-include';
 
 // Global
 @import 'global/all';
 @import 'global/header';
 @import 'global/footer';
+@import 'global/content.scss';
+
+// Project
+@import 'project/member.scss';
+@import 'project/aboutus.scss';
+@import 'project/apply.scss';
 
 // Front Page
 @import 'frontpage';
