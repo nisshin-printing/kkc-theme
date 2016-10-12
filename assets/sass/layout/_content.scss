@@ -20,4 +20,36 @@
 			font-size: rem-calc(map-get(map-get($header-sizes, 'medium'), 'h3'));
 		}
 	}
+	p {
+		line-height: 2.15;
+		margin-bottom: 30px;
+	}
+	a:not(.bottom) {
+		color: $primary-color;
+		word-break: break-all;
+	}
+}
+
+/*
+* ONLY - POST.
+*/
+.layout-post {
+	h1 {
+		font-size: 1.2rem;
+		padding-bottom: .5rem;
+	}
+	time {
+		letter-spacing: 8px;
+		@include breakpoint(medium down) {
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+	h2 {
+		border: {
+			left: 5px solid $primary-color;
+			bottom: 1px solid $primary-color;
+		}
+		padding: 5px 0 5px 1rem;
+	}
 }

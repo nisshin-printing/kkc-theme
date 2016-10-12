@@ -1,0 +1,52 @@
+.l-sidebar {
+	.l-sidebar_widget {
+		margin-bottom: 3rem;
+	}
+	.l-sidebar_title {
+		color: #FFF;
+		background-color: $primary-color;
+		font-weight: bold;
+		padding: 10px;
+		letter-spacing: 4px;
+		margin: 0 auto;
+	}
+	.menu {
+		@include menu-direction(vertical);
+		li:not(:last-child) {
+			border-bottom: 1px dotted #DDD;
+		}
+		a {
+			color: $body-font-color !important;
+			background-color: $menu-item-background-active;
+			padding: 15px;
+			&:hover {
+				color: $menu-item-color-active !important;
+			}
+		}
+	}
+	.current-menu-item a {
+		color: $menu-item-color-active !important;
+		background-color: $menu-item-background-active;
+		font-weight: bold;
+	}
+}
+/*
+ * お知らせ
+*/
+.widget_recent_entries {
+	ul {
+		@extend .no-bullet;
+	}
+	li {
+		margin: 0;
+		width: 100%;
+		border-bottom: 1px dotted #DDD;
+		&:last-child {
+			border: none;
+		}
+		> a {
+			display: block;
+			padding: 1.2rem 1rem;
+		}
+	}
+}

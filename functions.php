@@ -28,10 +28,8 @@ function kkc_setup_theme() {
 	add_editor_style( 'assets/css/editor-style.css' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array(
-		'search-form'
+		'gallery'
 	) );
-	register_nav_menu( 'primary-nav', 'primary-nav' );
-	register_nav_menu( 'foot-nav', 'foot-nav' );
 }
 add_action( 'after_setup_theme', 'kkc_setup_theme' );
 endif;

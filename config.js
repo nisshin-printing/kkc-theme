@@ -71,8 +71,8 @@ module.exports = {
 		},
 		image: {
 			src: 'assets/img/src/**/*',
-			watch: 'assets/img/src/**/*.[jpe?g|png|gif|ico]',
-			dest: 'assets/img/'
+			watch: 'assets/img/src/**/*',
+			dest: 'assets/img'
 		}
 	}
 };

@@ -32,8 +32,15 @@ wp_head();
 						'items_wrap' => '<ul class="%2$s" data-dropdown-menu role="menubar">%3$s</ul>',
 						'walker' => new Top_Bar_Walker_Nav_Menu()
 					) );
+					
+					echo '<div class="topbar-cta">';
+					if ( is_page( '45' ) ) {
+						echo '<a href="', get_page_link( '34' ), '" class="waves-effect button secondary">入会したい</a><a href="https://goo.gl/WmsmZ4" target="_blank" class="waves-effect button">交流会に参加する</a>';
+					} else {
+						echo '<a href="', get_page_link( '34' ), '" class="waves-effect button secondary">支援したい</a><a href="', get_page_link( '45' ), '" class="waves-effect button">交流会に参加する</a>';
+					}
+					echo '</div>';
 				?>
-				<div class="topbar-cta"><a href="#" class="waves-effect button secondary">支援したい</a><a href="#" class="waves-effect button">交流会に参加する</a></div>
 			</div>
 		</div>
 	</div>

@@ -7,6 +7,11 @@
 			font-size: 1.2em;
 		}
 	}
+	.-small {
+		@include breakpoint(medium) {
+			font-size: .8em;
+		}
+	}
 	.-bold {
 		font-weight: bold;
 	}
@@ -30,4 +35,30 @@
 		color: $primary-color;
 		margin-right: 1rem;
 	}
+	.fa-ul li {
+		margin-bottom: 1rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+.l-lp_section {
+	margin: {
+		top: 3rem;
+		bottom: 3rem;
+	}
+}
+.l-float_medium_left {
+	margin: 1rem auto;
+	@include breakpoint(medium) {
+		float: left;
+		margin: 0 1rem 0 auto;
+	}
+}
+.l-vertical_middle th,
+.l-vertical_middle td {
+	vertical-align: middle;
+}
+.l-vertical_middle .button {
+	margin: 0;
 }

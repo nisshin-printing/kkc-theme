@@ -1,0 +1,36 @@
+.l-pricingTable {
+	@extend .no-bullet;
+	@extend .text-center;
+	border: 1px solid #DDD;
+	li {
+		border-bottom: 1px dotted #DDD;
+		padding: .875rem 1.125rem;
+		&.l-pricingTable_button {
+			padding: .35rem 1.125rem;
+		}
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+	.l-pricingTable_title {
+		background-color: $primary-color;
+		color: #EEE;
+		font-weight: bold;
+		border-bottom: 0;
+	}
+	.l-pricingTable_price {
+		background-color: #F6F6F6;
+		color: #333;
+		font-size: 1.75rem;
+		border-bottom: 0;
+	}
+	.l-pricingTable_caution {
+		color: #666;
+	}
+	.l-pricingTable_description {
+		background-color: #eee;
+	}
+	.button {
+		margin: 0;
+	}
+}

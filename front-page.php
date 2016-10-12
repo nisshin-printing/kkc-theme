@@ -21,7 +21,7 @@ ob_start();
 				<li><span class="timer-name name-minutes">MINUTES</span><span class="timer-number number-minutes"></span></li>
 				<li><span class="timer-name name-seconds">SECONDS</span><span class="timer-number number-seconds"></span></li>
 			</ul>
-			<p class="cdt-link"><a href="#" class="button" title="詳しく見る">詳しく見る</a></p>
+			<p class="cdt-link"><a href="<?php echo get_page_link( '45' ); ?>" class="button" title="詳しく見る">詳しく見る</a></p>
 		</div>
 	</div>
 </section>
@@ -35,7 +35,7 @@ ob_start();
 				<use xlink:href="<?php echo USVG, 'holding-event'; ?>"></use>
 			</svg>
 			<h3>主催したイベント<br><span>52</span>回</h3>
-			<p><a href="#" class="button expanded waves-effect" title="過去のお見合い交流会">過去のお見合い交流会を見る</a></p>
+			<p><a href="<?php echo get_category_link( 3 ); ?>" class="button expanded waves-effect" title="過去のお見合い交流会">過去のお見合い交流会を見る</a></p>
 		</div>
 		<div class="column small-12 medium-4 item-performance color-">
 			<svg role="image" class="icon">
@@ -48,15 +48,15 @@ ob_start();
 				<use xlink:href="<?php echo USVG, 'presentation-01'; ?>"></use>
 			</svg>
 			<h3>紹介したベンチャー企業<br><span>129</span>社</h3>
-			<p><a href="#" class="button expanded waves-effect" title="発表企業の活動状況">発表企業の活動状況を見る</a></p>
 		</div>
+	</div>
+	<div class="row align-middle">
 		<div class="column small-12 medium-6">
-			<p class="text-center flex-video"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fkkchiroshima%2Fvideos%2F1027961010615408%2F&width=500&show_text=false&appId=1785950408309369&height=281" width="500" height="281" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></p>
+			<p class="text-center flex-video"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fkkchiroshima%2Fvideos%2F1027961010615408%2F&width=500&show_text=false&appId=1785950408309369" width="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></p>
 		</div>
 		<div class="column small-12 medium-6">
 			<p>広島経済活性化推進倶楽部は、広島を中心をする弁護士、税理士、司法書士、弁理士、中小企業診断士、事業家などの有志によって設立された特定非営利活動法人です。</p>
 			<p>広島経済活性化のため、新規事業創出の主たる担い手であるベンチャー企業・起業家に対して、必要なヒト・モノ・カネの支援につながる「場」を提供するとともに、支援者となる投資家（エンジェル）の啓発活動を進めています。</p>
-			<p><a href="#" class="button expanded waves-effect" title="活動報告を見る">活動報告を見る</a></p>
 		</div>
 	</div>
 </section>
@@ -66,7 +66,7 @@ ob_start();
 		<div class="column small-12 medium-6 text-center"><img src="<?php echo TIMG, 'scheme.gif'; ?>" alt="広島で開催される起業家・投資家・専門家お見合い交流会とは？"></div>
 		<div class="column small-12 medium-6">
 			<p>KKCでは、独創的な事業に取り組む起業家と、これを支援する投資家（エンジェル）および専門家とが集う「場」として、お見合い交流会を開催しています。この<span class="bg-line">「場」を通じた起業家と投資家および専門家の新たな出会いの中で、出資、経営支援、販路拡大、業務提携などの成果</span>が生まれています。これまでのお見合い交流会を契機とする発表企業への出資総額は<span class="bg-line">１億円</span>を超えています（事務局調べ）。</p>
-			<p><a href="#" class="button expanded waves-effect" title="お見合い交流会に参加する">お見合い交流会に参加する</a></p>
+			<p><a href="<?php echo get_page_link( '45' ); ?>" class="button expanded waves-effect" title="お見合い交流会に参加する">お見合い交流会に参加する</a></p>
 		</div>
 	</div>
 </section>
@@ -111,11 +111,11 @@ ob_start();
 		<div class="column small-12 medium-9">
 			<h3>求む、挑戦者</h3>
 			<p>私が方針としたいことは、ベンチャー企業とエンジェル（投資家）、そして、経・営・法などの専門家の三者のマッチングにより広島を中心とした経済の活性化を図っていくことです。...</p>
-			<p><a href="hellow.html" class="button secondary waves-effect" title="理事長あいさつ">続きはこちら</a></p>
+			<p><a href="<?php echo get_page_link( '72' ); ?>" class="button secondary waves-effect" title="理事長あいさつ">続きはこちら</a></p>
 		</div>
 	</div>
 </section>
-<section id="news-event">
+<section id="news-event" class="l-archive_news">
 	<div class="row">
 		<h2 class="column small-12 text-center">お知らせ</h2>
 		<div class="column small-12">
@@ -126,21 +126,26 @@ ob_start();
 			);
 			$posts = new WP_Query( $args );
 			if ( $posts->have_posts() ): while ( $posts->have_posts() ) : $posts->the_post();
+				// Add "News!".
+				$days = 3;
+				$today = date_i18n('U');
+				$entry = get_the_time('U');
+				$elapsed = date( 'U', ( $today - $entry ) ) / 86400;
+				$is_new = ( $days > $elapsed ) ? '<span class="new-label">New</span>' : '';
 		?>
 			<div class="post-list row align-middle">
 				<div class="post-container column small-12">
-					<p class="info-box"><time datetime="<?php the_time( 'c' ); ?>" itemprop="datePublished"><?php the_date( 'Y.m.d' ); ?></time><?php the_category( ' ', 'multiple', false ); ?><span class="new-label">New</span></p>
-					<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-					<div class="row">
+					<p class="info-box"><time datetime="<?php the_time( 'c' ); ?>" itemprop="datePublished"><?php the_date(); ?></time><?php the_category( ' ', 'multiple', false ); echo $is_new; ?></p>
+					<div class="row align-middle mb2">
 					<?php
-						if ( dtdsh_thumbnail() !== 'none' ) :
+						if ( has_post_thumbnail() ) :
 					?>
-						<div class="column small-4"><?php dtdsh_thumbnail(); ?></div>
-						<div class="column small-8"><?php the_excerpt(); ?></div>
+						<div class="column small-2"><a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail(); ?></a></div>
+						<div class="column small-10"><h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3></div>
 					<?php
 						else:
 					?>
-						<div class="column"><?php the_excerpt(); ?></div>
+						<div class="column"><h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3></div>
 					<?php
 						endif;
 					?>

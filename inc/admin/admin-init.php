@@ -17,4 +17,17 @@ function dtdsh_editor_settings( $initArray ) {
 }
 add_filter( 'tiny_mce_before_init', 'dtdsh_editor_settings' );
 endif;
-add_editor_style( TCSS . 'editor-style.css' );
+
+function set_custom_editStyle() {
+	add_theme_support( 'editor_style' );
+	global $editor_styles;
+	$stylesheet = false;
+	$current_screen = get_current_screen();
+	if ( 'post' === $current_screen->post_type ) {
+		$stylesheet = 'editor-style-post.css';
+	} else {
+		$stylesheet = 'editor-style.css';
+	}
+	add_editor_style( TCSS . $stylesheet );
+}
+add_action( 'current_screen', 'set_custom_editStyle' );

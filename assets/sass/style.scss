@@ -60,16 +60,22 @@ $font: '../font/';
 
 
 
-// Global
-@import 'global/all';
-@import 'global/header';
-@import 'global/footer';
-@import 'global/content.scss';
+// Layout
+@import 'layout/all';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/content';
+@import 'layout/archive';
+@import 'layout/princing-table';
 
 // Project
-@import 'project/member.scss';
-@import 'project/aboutus.scss';
-@import 'project/apply.scss';
+@import 'project/member';
+@import 'project/aboutus';
+@import 'project/apply';
 
 // Front Page
 @import 'frontpage';
+
+// WordPress
+@import 'wordpress';

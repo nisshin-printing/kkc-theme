@@ -22,15 +22,15 @@
 <footer>
 	<div id="footer-menu">
 		<div class="row">
-			<div class="column small-12">
+			<div class="column">
 				<?php
-				$args = array(
-					'menu_class' => 'menu',
-					'container' => 'nav',
-					'theme_lacation' => '',
-					'depth' => 1
-				);
-				wp_nav_menu( $args );
+					$args = array(
+						'menu_class' => 'menu l-foot_menubar',
+						'container' => 'nav',
+						'theme_lacation' => 'foot-bar',
+						'depth' => 1
+					);
+					wp_nav_menu( $args );
 				?>
 			</div>
 		</div>
@@ -40,15 +40,18 @@
 		<div class="row">
 			<div class="column small-12 large-8">
 				<p class="logo"><img src="<?php echo TIMG, 'logo-white.png'; ?>" alt="広島経済活性化推進倶楽部（KKC）のロゴ"></p>
-				<p>
-					<a href="#" class="button secondary waves-effect" title="法人情報">法人情報</a>
-					<a href="#" class="button secondary waves-effect" title="入会手続き">入会手続き</a>
-					<a href="#" class="button secondary waves-effect" title="プレゼン企業エントリー">プレゼン企業エントリー</a>
-					<a href="#" class="button waves-effect" title="お見合い交流会へ参加">お見合い交流会へ参加</a>
-				</p>
+				<?php
+					$args = array(
+						'menu_class' => 'menu l-foot_menu',
+						'container' => 'nav',
+						'theme_lacation' => 'foot-menu',
+						'depth' => 1
+					);
+					wp_nav_menu( $args );
+				?>
 				<p class="coryright-text">Copyright <?php echo date( 'Y' ); ?> <a href="http://dtdsh.com">日進印刷株式会社</a>.</p>
 			</div>
-			<div class="show-for-large">
+			<div class="column large-8 show-for-large">
 				<p>KKCからの情報を受け取る</p>
 				<p><a href="https://www.facebook.com/kkchiroshima" class="facebook-share" target="_blank" rel="nofollow" title="Facebook"><i class="fa fa-facebook"></i></a></p>
 			</div>

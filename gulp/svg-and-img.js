@@ -24,7 +24,7 @@ gulp.task('svg', () => {
 			parserOptions: { xmlMode: true }
 		}))
 		.pipe(gulp.dest(path.svg))
-		.pipe($.browser.stream(config.path.svg.watch));
+		.pipe($.browser.stream());
 });
 
 gulp.task('svg2png', () => {
@@ -41,5 +41,5 @@ gulp.task('svg2png', () => {
 		}))
 		.pipe($.imagemin())
 		.pipe(gulp.dest(path.svg))
-		.pipe($.browser.stream(config.path.svg.watch));
+		.pipe($.browser.stream());
 });

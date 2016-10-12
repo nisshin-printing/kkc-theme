@@ -108,6 +108,7 @@
 }
 //========================  Hello  ========================================================================//
 #hello {
+	background-color: $snow;
 	img {
 		border: $global-radius solid #FFF;
 		border-radius: $global-radius;
@@ -265,54 +266,8 @@
 }
 //========================  News Event  ========================================================================//
 #news-event {
-	background-color: $snow;
-	.post-list {
-		margin: 0;
-		width: 100%;
-		min-height: 263px;
-		border-radius: $global-radius;
-		&:first-child {
-			margin-top: 40px;
-		}
-		&:nth-child( 2n - 1 ) {
-			background-color: #E3E8EC;
-		}
-		.post-container {
-			padding: 0 50px 0;
-			width: 100%;
-		}
-		time {
-			font-style: italic;
-			font-weight: bold;
-			letter-spacing: 1.5px;
-		}
-		.info-box {
-			> a {
-				background-color: #37474F;
-				display: inline-block;
-				color: #FFF;
-				font-weight: 100;
-				padding: 2px 5px;
-				line-height: 1;
-				margin-left: 10px;
-				font-style: normal;
-				text-decoration: none;
-			}
-			> .new-label {
-				display: inline-block;
-				background-color: #ED1C24;
-				color: #FFF;
-				font-weight: 100;
-				padding: 2px 5px;
-				line-height: 1;
-				margin-left: 10px;
-			}
-		}
-		h3 {
-			margin: 1.2rem 0 1.7rem;
-			a {
-				font-weight: bold;
-			}
-		}
+	background-color: #FFF;
+	h2 {
+		margin-bottom: 40px;
 	}
 }

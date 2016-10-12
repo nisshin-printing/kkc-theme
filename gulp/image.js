@@ -10,8 +10,12 @@ let gulp = require('gulp'),
 gulp.task('image', () => {
 	return gulp.src(config.path.image.src)
 		.pipe($.plumber({
-			errorHandler: $.notify.onError('<%= error.message %>')
+			errorHandler: (error) => {
+				console.log(error.messageFormatted);
+				this.emit('end');
+			}
 		}))
 		.pipe($.imagemin())
-		.pipe(gulp.dest(config.path.image.dest));
+		.pipe(gulp.dest(config.path.image.dest))
+		.pipe($.browser.stream());
 });

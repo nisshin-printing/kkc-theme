@@ -1,95 +1,73 @@
 // Global Settings
-$main-font: 'Quicksand', '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-$noto-font: 'Quicksand', 'Noto Sans Japanese', '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$noto-font: 'Quicksand', 'ipaexg', 'Noto Sans Japanese', '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 $font: '../font/';
 $img: '../img/';
-@import "color-settings";
+@import 'color-settings';
 // Fonts
+@import 'fonts/font-awesome';
 @import 'fonts/font-include';
+
+// Foundation
+@import 'foundation-settings';
+@import 'foundation';
+
+// WordPress
+@import 'wordpress';
 .mceContentBody {
 	font-family: $noto-font;
 	font-weight: 200;
-}
-.post-meta {
-	padding: 1rem;
-	border: 1px solid #DDD;
-	border-radius: 3px;
-	margin: 1rem auto !important;
-	list-style: none;
-	li {
-		position: static !important;
-		margin: 0 !important;
-		padding: 0 !important;
-		&::before {
-			background: transparent !important;
-			position: static !important;
+	// 外部リンク （ External Link )
+	.link-external {
+		display: inline-block;
+		position: relative;
+		padding-right: 2.2em;
+		transition: all .3s;
+		font-family: $noto-font;
+		&::after {
+			position: absolute;
+			right: 0.5em;
+			padding: 0 1px;
+			font-family: FontAwesome;
+			transform: translateZ(0);
+			content: '\f08e';
+		}
+		&:hover {
+			color: $primary-color;
+			text-decoration: none;
 		}
 	}
-	.fa {
-		margin-right: 1rem !important;
-	}
-}
-// 外部リンク （ External Link )
-.link-external-block {
-	padding: .5rem;
-	list-style: none;
-	margin: 0 auto !important;
-}
-.link-external {
-	display: inline-block;
-	position: relative;
-	padding-right: 2.2em;
-	transition: all .3s;
-	font-family: $main-font;
-	&::after {
-		position: absolute;
-		right: 0.5em;
-		padding: 0 1px;
-		font-family: FontAwesome;
-		transform: translateZ(0);
-		content: '\f08e';
-	}
-	&:hover {
+	h1 {
+		font-weight: bold;
 		color: $primary-color;
-		text-decoration: none;
+		border-bottom: 1px solid $primary-color;
+		margin-bottom: 30px;
+		@include breakpoint(small) {
+			font-size: rem-calc(map-get(map-get($header-sizes, 'small'), 'h2'));
+		}
+		@include breakpoint(medium) {
+			font-size: rem-calc(map-get(map-get($header-sizes, 'medium'), 'h2'));
+		}
 	}
-}
-p {
-	line-height: 2.15;
-	margin-bottom: 30px;
-}
-a:not(.button) {
-	color: $primary-color;
-	word-break: break-all;
-}
-h2 {
-	background-color: #FFCE9E;
-	border-radius: 3px;
-	padding: 21px 18px 20px;
-	margin: 80px 0 42px;
-	font-family: $main-font;
-	&:first-child {
-		margin-top: 0;
+	h2 {
+		@include breakpoint(small) {
+			font-size: rem-calc(map-get(map-get($header-sizes, 'small'), 'h3'));
+		}
+		@include breakpoint(medium) {
+			font-size: rem-calc(map-get(map-get($header-sizes, 'medium'), 'h3'));
+		}
 	}
-	i {
-		margin-right: 1rem;
+	p {
+		line-height: 2.15;
+		margin-bottom: 30px;
 	}
-}
-h3 {
-	border-left: 5px solid #FFCE9E;
-	padding-left: 18px;
-	margin: 60px 0 22px;
-	font-family: $main-font;
-}
-h4 {
-	border-left: 5px solid $gainsboro;
-	padding-left: 18px;
-	margin: 20px 0 22px;
-	font-family: $main-font;
-}
-.bg-line {
-	font-weight: 700;
-	font-weight: 500;
-	padding: .2rem;
-	background: linear-gradient( transparent 40%, yellow 40% );
+	a:not(.bottom) {
+		color: $primary-color;
+		word-break: break-all;
+	}
+	.bg-line {
+		font-weight: 700;
+		font-weight: 500;
+		padding: .2rem;
+		background: linear-gradient( transparent 40%, yellow 40% );
+	}
 }
