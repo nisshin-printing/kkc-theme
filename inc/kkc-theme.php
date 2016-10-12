@@ -17,7 +17,7 @@
  * define( 'TADMIN', INC . 'admin' . DSEP );
  * define( 'TFUNC', INC . 'functions' . DSEP );
  *
- *
+ * 参考サイト　：　http://bbank.jp/
  */
 if ( ! function_exists( 'kkc_theme' ) ) :
 function kkc_theme() {
