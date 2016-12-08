@@ -17,7 +17,7 @@
  * define( 'TADMIN', INC . 'admin' . DSEP );
  * define( 'TFUNC', INC . 'functions' . DSEP );
  *
- * 参考サイト　：　http://bbank.jp/
+ * 参考サイト：　http://bbank.jp/
  */
 if ( ! function_exists( 'kkc_theme' ) ) :
 function kkc_theme() {
@@ -30,7 +30,7 @@ function kkc_theme() {
 	// Widgets
 	include_once( INC . 'widgets/likebox.php' );
 	if ( is_admin() ) {
-		include_once( TADMIN . 'admin-init.php' );
+		include_once( TADMIN . 'init.php' );
 	}
 	
 	register_nav_menu( 'primary-nav', 'primary-nav' );

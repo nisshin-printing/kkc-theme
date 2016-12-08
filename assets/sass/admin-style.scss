@@ -1,0 +1,153 @@
+// Global Settings
+$imgfolder: '../img/admin/';
+// Frame Works Import
+@import 'color-settings';
+
+/*
+ * 全ページ
+ */
+.wrap h1 {
+	margin-bottom: 2rem;
+}
+/*
+ * フォームテーブル
+ */
+.form-table {
+	margin: 2rem auto;
+}
+.nis-table_row {
+	border: 1px solid #E5E6E9;
+	th,
+	td {
+		padding: 1rem;
+		vertical-align: middle;
+	}
+}
+/*
+ * TH要素
+ */
+.nis-table_title {
+	background-color: #F6F7F8;
+}
+/*
+ * TD要素
+ */
+.nis-table_data {
+	background-color: #FFF;
+	padding: 0 3%;
+}
+/*
+ * input[type="text"]要素
+ * textarea要素
+ */
+.nis-formpart_input,
+.nis-formpart_textarea {
+	width: 90%;
+	padding: .5rem;
+	border: 1px solid #C0C6D5;
+	border-radius: 3px;
+	line-height: 1.5;
+}
+/*
+ * Image Manager
+ */
+.nis-formpart_imgmng {
+	width: calc( 90% - 100px - 1rem );
+	margin: 0;
+	padding: .5rem;
+	border: 1px solid #C0C6D5;
+	border-radius: 3px 0 0 3px;
+	color: rgba( #000, .6 );
+}
+.nis-formpart_imgclear {
+	width: 100px;
+	padding: 8.5px 8px;
+	cursor: pointer;
+	font-weight: bold;
+	display: inline-block;
+	text-align: center;
+	text-shadow: 1px 1px 1px #FFF;
+	border: 1px solid #C0C6D5;
+	border-radius: 0 3px 3px 0;
+	background-color: #DFE2E9;
+}
+/*
+ * 日時
+ */
+.nis-formpart_date,
+.nis-formpart_time {
+	padding: .5rem;
+	border: 1px solid #C0C6D5;
+	border-radius: 3px;
+	line-height: 1.5;
+}
+/*
+ * Color Picker
+ */
+.nis-formpart_pickme {
+	
+}
+/*
+ * ヘルパー
+ */
+.nis-table_helper {
+	float: right;
+	text-align: center;
+	font-size: 13px;
+	color: #FFF;
+	background-color: #2B313F;
+	border: 1px solid #2B313F;
+	padding: 0;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	font-weight: bold;
+	position: relative;
+	cursor: pointer;
+	cursor: help;
+	z-index: 15;
+	em {
+		position: absolute;
+		top: -1px;
+		padding: 1rem;
+		color: #FFF;
+		background-color: #2B313F;
+		font: {
+			size: 12px;
+			weight: normal;
+		}
+		width: 300px;
+		line-height: 1.5rem;
+		text-align: left;
+		z-index: 15;
+		display: none;
+		visibility: hidden;
+		@media ( min-width: 783px ) {
+			left: 42px;
+		}
+		@media ( max-width: 782px ) {
+			right: 42px;
+		}
+	}
+	&:active em,
+	&:focus em,
+	&:hover em,
+	em:hover {
+		display: block;
+		visibility: visible;
+	}
+}
+.has-nis_helper {
+	.nis-options_title {
+		line-height: 42px;
+	}
+	&::before,
+	&::after {
+		content: ' ';
+		display: table;
+	}
+	&::after {
+		clear: both;
+	}
+}

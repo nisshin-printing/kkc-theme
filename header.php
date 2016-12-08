@@ -1,4 +1,5 @@
 <?php
+$dtdsh_top = get_option( 'dtdsh_top' );
 $on_load = ( is_page( 'company' ) ) ? ' onload="initialize();"' : '';
 $head = ( is_singular() ) ? '<html lang="ja" dir="ltr"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">' : '<html lang="ja" dir="ltr"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">';
 $is_front = ( ! is_front_page() ) ? ' not-front' : '';
@@ -33,13 +34,9 @@ wp_head();
 						'walker' => new Top_Bar_Walker_Nav_Menu()
 					) );
 					
-					echo '<div class="topbar-cta">';
-					if ( is_page( '45' ) ) {
-						echo '<a href="', get_page_link( '34' ), '" class="waves-effect button secondary">入会したい</a><a href="https://goo.gl/WmsmZ4" target="_blank" class="waves-effect button">交流会に参加する</a>';
-					} else {
-						echo '<a href="', get_page_link( '34' ), '" class="waves-effect button secondary">支援したい</a><a href="', get_page_link( '45' ), '" class="waves-effect button">交流会に参加する</a>';
-					}
-					echo '</div>';
+					echo '<div class="topbar-cta">',
+					'<a href="', get_page_link( '34' ), '" class="waves-effect button secondary">支援したい</a><a href="', get_page_link( '45' ), '" class="waves-effect button">交流会に参加する</a>',
+					'</div>';
 				?>
 			</div>
 		</div>
@@ -52,10 +49,21 @@ wp_head();
 		</div>
 	</header>
 <?php
+	/*
+	 * HEX to RGB
+	 */
+	function hex_to_rgb( $hex ) {
+		$code = preg_replace( '/#/', '', $hex );
+		$color_code['red'] = hexdec( substr( $code, 0, 2 ) );
+		$color_code['green'] = hexdec( substr( $code, 2, 2 ) );
+		$color_code['blue'] = hexdec( substr( $code, 4, 2 ) );
+		return $color_code;
+	}
+	$bg_color = hex_to_rgb( $dtdsh_top['hero_mask'] );
 	if ( is_page( 'apply' ) ) {
 		echo '<h1 id="hero" style="background-image: url(', TIMG, 'lp/page-apply.png), linear-gradient(to left, rgba(0,0,0,.2), rgba(0,0,0,.2)), url(', TIMG, 'lp/hero-seminar.jpg);background-size: contain, cover, cover;"></h1>';
 	} else {
-		echo '<section id="hero" style="background-image: url(', TIMG, 'home/hero-01.jpg);background-attachment: fixed;"><div class="texture-overlay"></div><svg role="image" class="icon">
+		echo '<section id="hero" style="background-image: linear-gradient(to left, rgba(', $bg_color['red'], ',', $bg_color['green'], ',', $bg_color['blue'], ',', '.2), rgba(', $bg_color['red'], ',', $bg_color['green'], ',', $bg_color['blue'], ',', '.2)), url(', $dtdsh_top['hero_img'], ');background-attachment: fixed;"><div class="texture-overlay"></div><svg role="image" class="icon" style="fill: ', $dtdsh_top['hero_titlecolor'], '">
 			<use xlink:href="', USVG, 'hero-title"></use></svg></section>';
 	}
 ?>

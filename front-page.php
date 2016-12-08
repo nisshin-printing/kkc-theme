@@ -1,21 +1,24 @@
 <?php
 // Template Name: フロントページ
+$dtdsh_top = get_option( 'dtdsh_top' );
+$dtdsh_event = get_option( 'dtdsh_event' );
 dtdsh_header();
 ob_start();
+if ( strtotime( $dtdsh_event['about_date'] ) > time() ) :
 ?>
 <section id="next-event">
 	<div class="row">
-		<p class="date-info column small-12"><span class="label">次回</span>平成28年10月22日</p>
-		<h2 class="column small-12 text-center">第31回起業家・投資家・専門家「お見合い」交流会</h2>
+		<p class="date-info column small-12"><span class="label">次回</span><?php echo date( 'Y年m月d日', strtotime( $dtdsh_event['about_date'] ) ); ?></p>
+		<h2 class="column small-12 text-center"><?php echo $dtdsh_event['about_times']; ?>起業家・投資家・専門家「お見合い」交流会</h2>
 	</div>
 	<div class="row" id="countdown-timer">
 		<div class="column small-12 medium-12 large-6">
-			<p class="where-info"><a href="http://www.mighty.co.jp/shin-ai-building/highbuilding/access.html" target="_blank" rel="nofollow" title="ひろしまハイビル21">ひろしまハイビル21</a></p>
-			<p class="where-desc color-gainsboro">広島市中区銀山町3-1</p>
+			<p class="where-info"><a href="<?php echo $dtdsh_event['about_place_url']; ?>" target="_blank" rel="nofollow" title="<?php echo $dtdsh_event['about_place']; ?>"><?php echo $dtdsh_event['about_place']; ?></a></p>
+			<p class="where-desc color-gainsboro"><?php echo $dtdsh_event['about_address']; ?></p>
 			<p class="event-desc">新事業に挑戦するベンチャー起業家とそれを支える投資家（エンジェル）・専門家、そして、一般市民の交流の場です。刺激を受け勉強になることは間違いありません。学生参加も大歓迎。新たなイノベーションのスタートの場にあなたも立ち会いませんか。</p>
 		</div>
 		<div class="column small-12 medium-12 large-6">
-			<ul class="timervalue" data-cdt="1472656800">
+			<ul class="timervalue" data-cdt="<?php echo strtotime( $dtdsh_event['about_date'] ); ?>">
 				<li><span class="timer-name name-days">DAYS</span><span class="timer-number number-days"></span></li>
 				<li><span class="timer-name name-hours">HOURS</span><span class="timer-number number-hours"></span></li>
 				<li><span class="timer-name name-minutes">MINUTES</span><span class="timer-number number-minutes"></span></li>
@@ -25,6 +28,9 @@ ob_start();
 		</div>
 	</div>
 </section>
+<?php
+	endif;
+?>
 <section id="about-kkc">
 	<div class="row">
 		<h2 class="column small-12 text-center">KKCについて<span>― 広島経済活性化推進倶楽部 ―</span></h2>
@@ -34,20 +40,20 @@ ob_start();
 			<svg role="image" class="icon">
 				<use xlink:href="<?php echo USVG, 'holding-event'; ?>"></use>
 			</svg>
-			<h3>主催したイベント<br><span>52</span>回</h3>
+			<h3>主催したイベント<br><span><?php echo $dtdsh_top['num_event']; ?></span>回</h3>
 			<p><a href="<?php echo get_category_link( 3 ); ?>" class="button expanded waves-effect" title="過去のお見合い交流会">過去のお見合い交流会を見る</a></p>
 		</div>
 		<div class="column small-12 medium-4 item-performance color-">
 			<svg role="image" class="icon">
 				<use xlink:href="<?php echo USVG, 'speech'; ?>"></use>
 			</svg>
-			<h3>講演者<br><span>64</span>名</h3>
+			<h3>講演者<br><span><?php echo $dtdsh_top['num_speech']; ?></span>名</h3>
 		</div>
 		<div class="column small-12 medium-4 item-performance">
 			<svg role="image" class="icon">
 				<use xlink:href="<?php echo USVG, 'presentation-01'; ?>"></use>
 			</svg>
-			<h3>紹介したベンチャー企業<br><span>129</span>社</h3>
+			<h3>紹介したベンチャー企業<br><span><?php echo $dtdsh_top['num_venture']; ?></span>社</h3>
 		</div>
 	</div>
 	<div class="row align-middle">
@@ -75,7 +81,7 @@ ob_start();
 	// アクセストークン取得
 	$app_id = '1785950408309369';
 	$app_secret = '39feb6ce1acaa4e0989ba7b642d53ea7';
-	$album_id = '986849758059867';
+	$album_id = $dtdsh_top['album_id'];
 	$limit = '8';
 	$token = '1785950408309369|Krh-XMmZWhmuKR9QCqnNBSruCNs';
 	$img_alt = 'KKC創立15周年記念講演会（第30回交流会）の写真';

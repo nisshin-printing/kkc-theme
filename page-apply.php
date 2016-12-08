@@ -1,5 +1,15 @@
 <?php
 // Template Name: 交流会申込ページ
+$dtdsh_top = get_option( 'dtdsh_top' );
+$dtdsh_event = get_option( 'dtdsh_event' );
+/*
+ * 日付から曜日を計算
+ */
+function dtdsh_date_to_week( $date ) {
+	$week = array( '日', '月', '火', '水', '木', '金', '土' );
+	$w = date( 'w', strtotime( $date ) );
+	return $week[$w];
+}
 dtdsh_header();
 ob_start();
 ?>
@@ -16,10 +26,10 @@ ob_start();
 	// アクセストークン取得
 	$app_id = '1785950408309369';
 	$app_secret = '39feb6ce1acaa4e0989ba7b642d53ea7';
-	$album_id = '986849758059867';
+	$album_id = $dtdsh_top['album_id'];
 	$limit = '4';
 	$token = '1785950408309369|Krh-XMmZWhmuKR9QCqnNBSruCNs';
-	$img_alt = 'KKC創立15周年記念講演会（第30回交流会）の写真';
+	$img_alt = 'KKCのお見合い交流会の写真';
 	$album_url = '//www.facebook.com/kkchiroshima/photos/?tab=album&album_id=' . $album_id;
 	$json = file_get_contents( 'https://graph.facebook.com/' . $album_id . '/photos?limit=' . $limit . '&access_token=' . $token );
 	$json = json_decode( $json );
@@ -56,17 +66,17 @@ ob_start();
 		<h2 class="title-about -bold"><span class="-big">お見合い交流会</span>の<span class="-big">内容</span>は？</h2>
 		<h3>講演</h3>
 		<div class="-indent">
-			<p class="-big">野村総合研究所の三本松進氏による<span class="-big -block -bold">「最新！ベンチャー動向と次世代ビジネスモデル」</span></p>
+			<p class="-big"><?php echo $dtdsh_event['speech_works']; ?>の<?php echo $dtdsh_event['speech_name']; ?>氏による<span class="-big -block -bold">「<?php echo $dtdsh_event['speech_title']; ?>」</span></p>
 		</div>
 		<h3>起業家プレゼンテーション</h3>
 		<div class="-indent clearfix">
-			<span class="p-number">１</span><p class="-big">株式会社ディ・エフ・エフ（東京）代表取締役 清水久敬による<span class="-big -block -bold">「企業の情報開示を革新するスマート・ディスクロージャー」</span></p>
+			<span class="p-number">１</span><p class="-big"><?php echo $dtdsh_event['presentor_1']; ?>による<span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_1']; ?>」</span></p>
 		</div>
 		<div class="-indent clearfix">
-			<span class="p-number">２</span><p class="-big">株式会社イノテック（広島）代表取締役 伊藤賢治による<span class="-big -block -bold">「クラウド型遠隔診断システム」</span></p>
+			<span class="p-number">２</span><p class="-big"><?php echo $dtdsh_event['presentor_2']; ?><span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_2']; ?>」</span></p>
 		</div>
 		<div class="-indent clearfix">
-			<span class="p-number">３</span><p class="-big">モデライズ株式会社（東京）代表取締役社長兼CEO 高村淳による<span class="-big -block -bold">「人工知能技術によるスマート・データサイエンス事業」</span></p>
+			<span class="p-number">３</span><p class="-big"><?php echo $dtdsh_event['presentor_3']; ?>による<span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_3']; ?>」</span></p>
 		</div>
 		<h3>起業家・投資家・専門家に出会える！懇親会</h3>
 	</div>
@@ -76,7 +86,7 @@ ob_start();
 		<figure>
 			<img src="<?php echo TIMG, 'lp/seminar-01.jpg'; ?>" alt="懇親会の写真">
 			<figcaption>
-				<div class="caption-content"><a href="', $album_url, '" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
+				<div class="caption-content"><a href="<?php echo $album_url; ?>" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
 			</figcaption>
 		</figure>
 	</div>
@@ -84,7 +94,7 @@ ob_start();
 		<figure>
 			<img src="<?php echo TIMG, 'lp/seminar-02.jpg'; ?>" alt="懇親会の写真">
 			<figcaption>
-				<div class="caption-content"><a href="', $album_url, '" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
+				<div class="caption-content"><a href="<?php echo $album_url; ?>" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
 			</figcaption>
 		</figure>
 	</div>
@@ -92,7 +102,7 @@ ob_start();
 		<figure>
 			<img src="<?php echo TIMG, 'lp/seminar-03.jpg'; ?>" alt="懇親会の写真">
 			<figcaption>
-				<div class="caption-content"><a href="', $album_url, '" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
+				<div class="caption-content"><a href="<?php echo $album_url; ?>" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
 			</figcaption>
 		</figure>
 	</div>
@@ -100,7 +110,7 @@ ob_start();
 		<figure>
 			<img src="<?php echo TIMG, 'lp/seminar-04.jpg'; ?>" alt="懇親会の写真">
 			<figcaption>
-				<div class="caption-content"><a href="', $album_url, '" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
+				<div class="caption-content"><a href="<?php echo $album_url; ?>" title="Facebookで見る" rel="nofollow" target="_blank"><span class="fa-stack fa-2x"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x color-facebook"></i></span><br><p>Facebookで公開しています！</p></a></div>
 			</figcaption>
 		</figure>
 	</div>
@@ -109,13 +119,13 @@ ob_start();
 	<div class="column">
 		<h2 class="title-about -bold"><span class="-big">講師</span>の<span class="-big">紹介</h2>
 		<div class="-indent">
-			<h3 class="bb1 clearfix">三本松進氏<span class="float-right -small">野村総合研究所 未来創発センター主席研究員</span></h3>
+			<h3 class="bb1 clearfix"><?php echo $dtdsh_event['speech_name']; ?>氏<span class="float-right -small"><?php echo $dtdsh_event['speech_works']; ?></span></h3>
 			<div class="-indent mt2 clearfix">
 				<div class="l-float_medium_left text-center">
-					<img src="//www.jspacesystems.or.jp/library/archives/usef/simpo/images/f5_simpo07_6_thumb_1.JPG" alt="USEFシンポジウム_vol7より。KKC第31回起業家・投資家・専門家お見合い交流会の講師三本松進氏">
-					<cite><a href="http://www.jspacesystems.or.jp/library/archives/usef/simpo/f5_simpo_7.html" target="_blank" rel="nofollow">第7回USEFシンポジウムより</a></cite>
+					<img src="<?php echo $dtdsh_event['speech_img']; ?>" alt="<?php echo $dtdsh_event['speech_imgsrc']; ?>より。KKC<?php echo $dtdsh_event['about_times']; ?>起業家・投資家・専門家お見合い交流会の講師<?php echo $dtdsh_event['speech_name']; ?>氏">
+					<cite><a href="<?php echo $dtdsh_event['speech_imgsrc_url']; ?>" target="_blank" rel="nofollow"><?php echo $dtdsh_event['speech_imgsrc']; ?>より</a></cite>
 				</div>
-				<p class="-big">昭和25年広島市で生まれ、昭和50年東京大学経済学部卒業、通産省入省。昭和59年在イラン日本国大使館勤務。平成3年大臣官房情報管理課長、平成16年経済産業研修所所長。平成17年（独）中小企業基盤整備機構シニアリサーチャー兼任一橋大学商学部客員教授。平成21年無人宇宙実験システム研究開発機構専務理事、平成25年 宇宙システム開発利用推進機構専務理事。平成28年野村総研に転籍、現在に至る、満66歳。</p>
+				<p class="-big"><?php echo $dtdsh_event['speech_history']; ?></p>
 			</div>
 		</div>
 	</div>
@@ -137,21 +147,21 @@ ob_start();
 	<div class="column small-12 large-4">
 		<ul class="l-pricingTable">
 			<li class="l-pricingTable_title">一般</li>
-			<li class="l-pricingTable_price">4,000円</li>
-			<li class="l-pricingTable_caution">懇親会のみ参加：3,000円</li>
+			<li class="l-pricingTable_price"><?php echo $dtdsh_event['fee_general']; ?></li>
+			<li class="l-pricingTable_caution">懇親会のみ参加：<?php echo $dtdsh_event['fee_general_gathering_only']; ?></li>
 			<li class="l-pricingTable_description">内訳</li>
-			<li class="text-right">講演・プレゼン：2,000円</li>
-			<li class="text-right">懇親会：2,000円</li>
+			<li class="text-right">講演・プレゼン：<?php echo $dtdsh_event['fee_general_presen']; ?></li>
+			<li class="text-right">懇親会：<?php echo $dtdsh_event['fee_general_gathering']; ?></li>
 		</ul>
 	</div>
 	<div class="column small-12 large-4">
 		<ul class="l-pricingTable">
 			<li class="l-pricingTable_title">学生</li>
-			<li class="l-pricingTable_price">1,000円</li>
+			<li class="l-pricingTable_price"><?php echo $dtdsh_event['fee_student']; ?></li>
 			<li class="l-pricingTable_caution">講演・プレゼンは<span class="bg-line">無料</span></li>
 			<li class="l-pricingTable_description">内訳</li>
 			<li class="text-right">講演・プレゼン：無料</li>
-			<li class="text-right">懇親会：1,000円</li>
+			<li class="text-right">懇親会：<?php echo $dtdsh_event['fee_student']; ?></li>
 		</ul>
 	</div>
 </div>
@@ -163,51 +173,44 @@ ob_start();
 		<table class="l-vertical_middle">
 			<tr>
 				<th>開催日時</th>
-				<td>平成２８年１０月２２日（土）<br>開会１４：００（受付開始１３：３０～）</td>
+				<td><?php echo date( 'Y年m月d日', strtotime( $dtdsh_event['about_date'] ) ); ?>（<?php echo dtdsh_date_to_week( $dtdsh_event['about_date'] ); ?>）<br>開会<?php echo $dtdsh_event['about_time']; ?>（受付開始<?php echo $dtdsh_event['about_time_opening']; ?>～）</td>
 			</tr>
 			<tr>
 				<th>会場</th>
-				<td><a href="http://www.mighty.co.jp/shin-ai-building/highbuilding/access.html" target="_blank" rel="nofollow">ひろしまハイビル</a><br>（広島市中区銀山町3-1）</td>
+				<td><a href="<?php echo $dtdsh_event['about_place_url']; ?>" target="_blank" rel="nofollow"><?php echo $dtdsh_event['about_place']; ?></a><br>（<?php echo $dtdsh_event['about_address']; ?>）</td>
 			</tr>
 			<tr>
 				<th>スケジュール</th>
-				<td>
-					受付開始　　　：　１３：３０～１４：００<br>
-					講演　　　　　：　１４：１０～１５：００<br>
-					起業家プレゼン：　１５：１０～１７：００<br>
-					懇親会　　　　：　１７：３０～
-				</td>
+				<td><?php echo $dtdsh_event['about_schedule']; ?></td>
 			</tr>
 			<tr>
 				<th>定員</th>
-				<td>８０名（定員になり次第受付終了）</td>
+				<td><?php echo $dtdsh_event['about_capacity']; ?>（定員になり次第受付終了）</td>
 			</tr>
 			<tr>
 				<th>参加費</th>
 				<td>
-					【一般価格】　4,000円　<span class="-small">※懇親会のみの参加は3,000円</span><br>
-					【学生価格】　1,000円　<span class="-small">※講演・プレゼンのみは無料</span><br>
+					【一般価格】　<?php echo $dtdsh_event['fee_general']; ?>　<span class="-small">※懇親会のみの参加は<?php echo $dtdsh_event['fee_general_gathering_only']; ?></span><br>
+					【学生価格】　<?php echo $dtdsh_event['fee_student']; ?>　<span class="-small">※講演・プレゼンのみは無料</span><br>
 					【会員価格】　無料
 				</td>
 			</tr>
 			<tr>
 				<th>チラシ</th>
-				<td><a href="http://www.keizai-kassei.net/fliers/31_flier.pdf" title="第31回起業家・投資家・専門家お見合い交流会のチラシ（PDF）" target="_blank">第31回交流会チラシ</a></td>
+				<td><a href="<?php echo $dtdsh_event['about_flyer']; ?>" title="<?php echo $dtdsh_event['about_times']; ?>起業家・投資家・専門家お見合い交流会のチラシ（PDF）" target="_blank"><?php echo $dtdsh_event['about_times']; ?>交流会チラシ</a></td>
 			</tr>
 			<tr>
 				<th>お申込み</th>
-				<td><a href="https://goo.gl/WmsmZ4" title="お申込みフォーム" target="_blank" class="button">お申込みフォーム</a></td>
+				<td><a href="<?php echo $dtdsh_event['about_form']; ?>" title="お申込みフォーム" target="_blank" class="button">お申込みフォーム</a></td>
 			</tr>
 		</table>
 	</div>
-	<div id="seminar-map" class="column small-12 large-6">
-		<iframe src="http://maps.google.co.jp/maps?q=ひろしまハイビル&amp;z=15&amp;output=embed" frameborder="0" width="100%" height="100%" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-	</div>
+	<div id="seminar-map" class="column small-12 large-6"><?php echo $dtdsh_event['about_iframe']; ?></div>
 </div>
 <div class="l-lp_section row">
 	<div class="column">
 		<h2 class="title-about -bold">お申込みはこちらから</h2>
-		<p class="-big text-center"><a href="https://goo.gl/WmsmZ4" class="button -big p2" target="_blank" title="第31回起業家・投資家・専門家お見合い交流会の申し込みオンラインフォーム"><i class="fa fa-pencil-square-o mr1"></i>お申込みはこちら</a></p>
+		<p class="-big text-center"><a href="<?php echo $dtdsh_event['about_form']; ?>" class="button -big p2" target="_blank" title="<?php echo $dtdsh_event['about_times']; ?>起業家・投資家・専門家お見合い交流会の申し込みオンラインフォーム"><i class="fa fa-pencil-square-o mr1"></i>お申込みはこちら</a></p>
 	</div>
 </div>
 <?php
