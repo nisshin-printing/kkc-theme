@@ -38,20 +38,20 @@ if ( strtotime( $dtdsh_event['about_date'] ) > time() ) :
 	<div class="row">
 		<div class="column small-12 medium-4 item-performance">
 			<svg role="image" class="icon">
-				<use xlink:href="<?php echo USVG, 'holding-event'; ?>"></use>
+				<use xlink:href="<?php echo USVG, 'top-event'; ?>"></use>
 			</svg>
 			<h3>主催したイベント<br><span><?php echo $dtdsh_top['num_event']; ?></span>回</h3>
 			<p><a href="<?php echo get_category_link( 3 ); ?>" class="button expanded waves-effect" title="過去のお見合い交流会">過去のお見合い交流会を見る</a></p>
 		</div>
 		<div class="column small-12 medium-4 item-performance color-">
 			<svg role="image" class="icon">
-				<use xlink:href="<?php echo USVG, 'speech'; ?>"></use>
+				<use xlink:href="<?php echo USVG, 'top-speech'; ?>"></use>
 			</svg>
 			<h3>講演者<br><span><?php echo $dtdsh_top['num_speech']; ?></span>名</h3>
 		</div>
 		<div class="column small-12 medium-4 item-performance">
 			<svg role="image" class="icon">
-				<use xlink:href="<?php echo USVG, 'presentation-01'; ?>"></use>
+				<use xlink:href="<?php echo USVG, 'top-venture'; ?>"></use>
 			</svg>
 			<h3>紹介したベンチャー企業<br><span><?php echo $dtdsh_top['num_venture']; ?></span>社</h3>
 		</div>
