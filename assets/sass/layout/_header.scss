@@ -33,6 +33,10 @@
 			color: $primary-color;
 		}
 	}
+	.submenu {
+		background-color: #FFF;
+		z-index: 10;
+	}
 }
 //========================  Menu Button ========================================================================//
 #btn-menu {

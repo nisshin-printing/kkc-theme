@@ -37,22 +37,16 @@ if ( strtotime( $dtdsh_event['about_date'] ) > time() ) :
 	</div>
 	<div class="row">
 		<div class="column small-12 medium-4 item-performance">
-			<svg role="image" class="icon">
-				<use xlink:href="<?php echo USVG, 'top-event'; ?>"></use>
-			</svg>
+			<img src="<?php echo TIMG, 'home/top-event.png'; ?>" alt="主催したイベント">
 			<h3>主催したイベント<br><span><?php echo $dtdsh_top['num_event']; ?></span>回</h3>
 			<p><a href="<?php echo get_category_link( 3 ); ?>" class="button expanded waves-effect" title="過去のお見合い交流会">過去のお見合い交流会を見る</a></p>
 		</div>
 		<div class="column small-12 medium-4 item-performance color-">
-			<svg role="image" class="icon">
-				<use xlink:href="<?php echo USVG, 'top-speech'; ?>"></use>
-			</svg>
+			<img src="<?php echo TIMG, 'home/top-speech.png'; ?>" alt="講演者">
 			<h3>講演者<br><span><?php echo $dtdsh_top['num_speech']; ?></span>名</h3>
 		</div>
 		<div class="column small-12 medium-4 item-performance">
-			<svg role="image" class="icon">
-				<use xlink:href="<?php echo USVG, 'top-venture'; ?>"></use>
-			</svg>
+			<img src="<?php echo TIMG, 'home/top-venture.png'; ?>" alt="紹介したベンチャー企業">
 			<h3>紹介したベンチャー企業<br><span><?php echo $dtdsh_top['num_venture']; ?></span>社</h3>
 		</div>
 	</div>
@@ -115,7 +109,7 @@ if ( strtotime( $dtdsh_event['about_date'] ) > time() ) :
 		<h2 class="column small-12 text-center">理事長のご挨拶</h2>
 		<div class="column small-12 medium-3 text-center"><img src="<?php echo TIMG, 'home/yamashita-top.jpg'; ?>" alt="KKCの理事長の写真"></div>
 		<div class="column small-12 medium-9">
-			<h3>求む、挑戦者</h3>
+			<h3>挑戦者求む！</h3>
 			<p>私が方針としたいことは、ベンチャー企業とエンジェル（投資家）、そして、経・営・法などの専門家の三者のマッチングにより広島を中心とした経済の活性化を図っていくことです。...</p>
 			<p><a href="<?php echo get_page_link( '72' ); ?>" class="button secondary waves-effect" title="理事長あいさつ">続きはこちら</a></p>
 		</div>

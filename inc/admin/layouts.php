@@ -102,7 +102,7 @@ function dtdsh_event_options() {
 			array(
 				'name' => '講演者の画像',
 				'fn' => 'speech_img',
-				'type' => 'imagemanager',
+				'type' => 'input',
 				'def' => '//www.jspacesystems.or.jp/library/archives/usef/simpo/images/f5_simpo07_6_thumb_1.JPG'
 			),
 			array(
@@ -167,6 +167,18 @@ function dtdsh_event_options() {
 				'type' => 'input',
 				'def' => 'モデライズ株式会社（東京）代表取締役社長兼CEO 高村淳'
 			),
+			array(
+				'name' => '4つ目-タイトル',
+				'fn' => 'presen_title_4',
+				'type' => 'input',
+				'def' => ''
+			),
+			array(
+				'name' => '4つ目-プレゼンター',
+				'fn' => 'presentor_4',
+				'type' => 'input',
+				'def' => ''
+			),
 		)
 	);
 	
@@ -206,22 +218,42 @@ function dtdsh_event_options() {
 				'def' => ''
 			),
 			array(
-				'name' => '会場名',
+				'name' => '講演・プレゼン会場名',
 				'fn' => 'about_place',
 				'type' => 'input',
 				'def' => 'ひろしまハイビル'
 			),
 			array(
-				'name' => '会場住所',
+				'name' => '懇親会場名',
+				'fn' => 'about_party_place',
+				'type' => 'input',
+				'desc' => '上記会場と同じ場合は空欄にしてください。',
+				'def' => ''
+			),
+			array(
+				'name' => '講演・プレゼン会場住所',
 				'fn' => 'about_address',
 				'type' => 'input',
 				'def' => '広島市中区銀山町3-1'
 			),
 			array(
-				'name' => '会場のサイトURL',
+				'name' => '懇親会場住所',
+				'fn' => 'about_party_address',
+				'type' => 'input',
+				'desc' => '「懇親会場名」が空白のときは表示されません。',
+				'def' => ''
+			),
+			array(
+				'name' => '講演・プレゼン会場のサイトURL',
 				'fn' => 'about_place_url',
 				'type' => 'input',
 				'def' => 'http://www.mighty.co.jp/shin-ai-building/highbuilding/access.html'
+			),
+			array(
+				'name' => '懇親会会場のサイトURL',
+				'fn' => 'about_party_place_url',
+				'type' => 'input',
+				'def' => ''
 			),
 			array(
 				'name' => '地図の埋め込みコード',

@@ -74,6 +74,12 @@
 			bottom: 40px;
 		}
 		text-align: center;
+		> img {
+			width: 210px;
+			height: 210px;
+			border-radius: 210px;
+			background-color: #84dbff;
+		}
 		h3 {
 			margin: 2rem auto 0;
 			font-size: 1.5rem;

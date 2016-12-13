@@ -69,15 +69,36 @@ ob_start();
 			<p class="-big"><?php echo $dtdsh_event['speech_works']; ?>の<?php echo $dtdsh_event['speech_name']; ?>氏による<span class="-big -block -bold">「<?php echo $dtdsh_event['speech_title']; ?>」</span></p>
 		</div>
 		<h3>起業家プレゼンテーション</h3>
+		<?php
+			if ( isset( $dtdsh_event['presentor_1'] ) ) :
+		?>
 		<div class="-indent clearfix">
 			<span class="p-number">１</span><p class="-big"><?php echo $dtdsh_event['presentor_1']; ?>による<span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_1']; ?>」</span></p>
 		</div>
+		<?php
+			endif;
+			if ( isset( $dtdsh_event['presentor_2'] ) ) :
+		?>
 		<div class="-indent clearfix">
 			<span class="p-number">２</span><p class="-big"><?php echo $dtdsh_event['presentor_2']; ?><span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_2']; ?>」</span></p>
 		</div>
+		<?php
+			endif;
+			if ( isset( $dtdsh_event['presentor_3'] ) ) :
+		?>
 		<div class="-indent clearfix">
 			<span class="p-number">３</span><p class="-big"><?php echo $dtdsh_event['presentor_3']; ?>による<span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_3']; ?>」</span></p>
 		</div>
+		<?php
+			endif;
+			if ( isset( $dtdsh_event['presentor_4'] ) ) :
+		?>
+		<div class="-indent clearfix">
+			<span class="p-number">４</span><p class="-big"><?php echo $dtdsh_event['presentor_4']; ?>による<span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_4']; ?>」</span></p>
+		</div>
+		<?php
+			endif;
+		?>
 		<h3>起業家・投資家・専門家に出会える！懇親会</h3>
 	</div>
 </div>
@@ -175,10 +196,27 @@ ob_start();
 				<th>開催日時</th>
 				<td><?php echo date( 'Y年m月d日', strtotime( $dtdsh_event['about_date'] ) ); ?>（<?php echo dtdsh_date_to_week( $dtdsh_event['about_date'] ); ?>）<br>開会<?php echo $dtdsh_event['about_time']; ?>（受付開始<?php echo $dtdsh_event['about_time_opening']; ?>～）</td>
 			</tr>
+			<?php
+				if ( isset( $dtdsh_event['about_party_place'] ) ) :
+			?>
+			<tr>
+				<th>講演・プレゼン会場</th>
+				<td><a href="<?php echo $dtdsh_event['about_place_url']; ?>" target="_blank" rel="nofollow"><?php echo $dtdsh_event['about_place']; ?></a><br>（<?php echo $dtdsh_event['about_address']; ?>）</td>
+			</tr>
+			<tr>
+				<th>懇親会会場</th>
+				<td><a href="<?php echo $dtdsh_event['about_party_place_url']; ?>" target="_blank" rel="nofollow"><?php echo $dtdsh_event['about_party_place']; ?></a><br>（<?php echo $dtdsh_event['about_party_address']; ?>）</td>
+			</tr>
+			<?php
+				else:
+			?>
 			<tr>
 				<th>会場</th>
 				<td><a href="<?php echo $dtdsh_event['about_place_url']; ?>" target="_blank" rel="nofollow"><?php echo $dtdsh_event['about_place']; ?></a><br>（<?php echo $dtdsh_event['about_address']; ?>）</td>
 			</tr>
+			<?php
+				endif;
+			?>
 			<tr>
 				<th>スケジュール</th>
 				<td><?php echo $dtdsh_event['about_schedule']; ?></td>

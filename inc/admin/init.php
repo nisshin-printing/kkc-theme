@@ -38,13 +38,13 @@ function dtdsh_admin_menu() {
 		'管理',
 		'管理',
 		'manage_options',
-		'dtdsh',
-		'dtdsh_pages',
+		'dtdsh-edit-top',
+		'dtdsh_top_function',
 		'dashicons-lightbulb',
 		2
 	);
 	$dtdsh_top = add_submenu_page(
-		'dtdsh',
+		'dtdsh-edit-top',
 		'トップページ',
 		'トップページ',
 		'manage_options',
@@ -52,7 +52,7 @@ function dtdsh_admin_menu() {
 		'dtdsh_top_function'
 	);
 	$dtdsh_event = add_submenu_page(
-		'dtdsh',
+		'dtdsh-edit-top',
 		'次回交流会',
 		'次回交流会',
 		'manage_options',
@@ -136,6 +136,8 @@ function dtdsh_options_init() {
 		$dtdsh_event_setuparray['presentor_2'] = '株式会社イノテック（広島）代表取締役 伊藤賢治';
 		$dtdsh_event_setuparray['presen_title_3'] = '人工知能技術によるスマート・データサイエンス事業';
 		$dtdsh_event_setuparray['presentor_3'] = 'モデライズ株式会社（東京）代表取締役社長兼CEO 高村淳';
+		$dtdsh_event_setuparray['presen_title_4'] = '';
+		$dtdsh_event_setuparray['presentor_4'] = '';
 		// ABOUT
 		$dtdsh_event_setuparray['about_times'] = '第31回';
 		$dtdsh_event_setuparray['about_album'] = '986849758059867';
@@ -143,8 +145,11 @@ function dtdsh_options_init() {
 		$dtdsh_event_setuparray['about_time'] = '14:00';
 		$dtdsh_event_setuparray['about_time_opening'] = '13:30';
 		$dtdsh_event_setuparray['about_place'] = 'ひろしまハイビル';
+		$dtdsh_event_setuparray['about_party_place'] = '';
 		$dtdsh_event_setuparray['about_address'] = '広島市中区銀山町3-1';
+		$dtdsh_event_setuparray['about_party_address'] = '';
 		$dtdsh_event_setuparray['about_place_url'] = 'http://www.mighty.co.jp/shin-ai-building/highbuilding/access.html';
+		$dtdsh_event_setuparray['about_party_place_url'] = '';
 		$dtdsh_event_setuparray['about_iframe'] = '<iframe src="http://maps.google.co.jp/maps?q=ひろしまハイビル&amp;z=15&amp;output=embed" frameborder="0" width="100%" height="100%" scrolling="no" marginheight="0" marginwidth="0"></iframe>';
 		$dtdsh_event_setuparray['about_schedule'] = '受付開始　　　：　１３：３０～１４：００<br>講演　　　　　：　１４：１０～１５：００<br>起業家プレゼン：　１５：１０～１７：００<br>懇親会　　　　：　１７：３０～';
 		$dtdsh_event_setuparray['about_capacity'] = '80名';
