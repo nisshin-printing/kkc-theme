@@ -49,7 +49,7 @@
 					);
 					wp_nav_menu( $args );
 				?>
-				<p class="coryright-text">Copyright <?php echo date( 'Y' ); ?> <a href="http://dtdsh.com">日進印刷株式会社</a>.</p>
+				<p class="coryright-text">Copyright <?php echo date( 'Y' ); ?> <a href="<?php echo DTDSH_HOME_URL; ?>">KKC</a>.</p>
 			</div>
 			<div class="column large-8 show-for-large">
 				<p>KKCからの情報を受け取る</p>

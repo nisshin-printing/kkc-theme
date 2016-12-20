@@ -1,17 +1,24 @@
 <?php
 $dtdsh_top = get_option( 'dtdsh_top' );
+$dtdsh_event = get_option( 'dtdsh_event' );
 $on_load = ( is_page( 'company' ) ) ? ' onload="initialize();"' : '';
 $head = ( is_singular() ) ? '<html lang="ja" dir="ltr"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">' : '<html lang="ja" dir="ltr"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">';
 $is_front = ( ! is_front_page() ) ? ' not-front' : '';
 echo '<!DOCTYPE html><html lang="ja" dir="ltr">',
 $head,
+'<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+	new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src= "https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-5NPCHX3");</script>
+<!-- End Google Tag Manager -->',
 '<meta charset="UTF-8">',
 '<meta http-equiv="X-UA-Compatible" content="IE=edge,chorme=1"><meta name="viewport" content="width=device-width, initial-scale=1.0">',
-'<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]--><script>' . file_get_contents( TJS . 'prefetch-onload.min.js' ) . '</script><meta name="theme-color" content="#000066">';
+'<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]--><meta name="theme-color" content="#000066">';
 wp_head();
 ?></head>
 <body id="PageTop" <?php body_class(); echo $on_load; ?>>
-	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WV7S6J" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WV7S6J');</script>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NPCHX3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 	<div id="topbar" class="top-bar" role="navigation">
 		<div class="row">
 			<div class="column">
@@ -34,9 +41,15 @@ wp_head();
 						'walker' => new Top_Bar_Walker_Nav_Menu()
 					) );
 					
-					echo '<div class="topbar-cta">',
-					'<a href="', get_page_link( '34' ), '" class="waves-effect button secondary">支援したい</a><a href="', get_page_link( '45' ), '" class="waves-effect button">交流会に参加する</a>',
-					'</div>';
+					if ( is_page( 'apply' ) && strtotime( $dtdsh_event['about_date'] ) > time() ) {
+						echo '<div class="topbar-cta">',
+						'<a href="', get_page_link( '34' ), '" class="waves-effect button secondary">支援したい</a><a href="', $dtdsh_event['about_form'], '" class="waves-effect button" target="_blank" rel="nofollow">交流会に参加する</a>',
+						'</div>';
+					} else {
+						echo '<div class="topbar-cta">',
+							'<a href="', get_page_link( '34' ), '" class="waves-effect button secondary">支援したい</a><a href="', get_page_link( '45' ), '" class="waves-effect button">交流会に参加する</a>',
+						'</div>';
+					}
 				?>
 			</div>
 		</div>

@@ -151,6 +151,7 @@ function dtdsh_options_init() {
 		$dtdsh_event_setuparray['about_place_url'] = 'http://www.mighty.co.jp/shin-ai-building/highbuilding/access.html';
 		$dtdsh_event_setuparray['about_party_place_url'] = '';
 		$dtdsh_event_setuparray['about_iframe'] = '<iframe src="http://maps.google.co.jp/maps?q=ひろしまハイビル&amp;z=15&amp;output=embed" frameborder="0" width="100%" height="100%" scrolling="no" marginheight="0" marginwidth="0"></iframe>';
+		$dtdsh_event_setuparray['about_party_iframe'] = '<iframe src="http://maps.google.co.jp/maps?q=ひろしまハイビル&amp;z=15&amp;output=embed" frameborder="0" width="100%" height="100%" scrolling="no" marginheight="0" marginwidth="0"></iframe>';
 		$dtdsh_event_setuparray['about_schedule'] = '受付開始　　　：　１３：３０～１４：００<br>講演　　　　　：　１４：１０～１５：００<br>起業家プレゼン：　１５：１０～１７：００<br>懇親会　　　　：　１７：３０～';
 		$dtdsh_event_setuparray['about_capacity'] = '80名';
 		$dtdsh_event_setuparray['about_flyer'] = 'http://www.keizai-kassei.net/fliers/31_flier.pdf';

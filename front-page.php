@@ -9,7 +9,7 @@ if ( strtotime( $dtdsh_event['about_date'] ) > time() ) :
 <section id="next-event">
 	<div class="row">
 		<p class="date-info column small-12"><span class="label">次回</span><?php echo date( 'Y年m月d日', strtotime( $dtdsh_event['about_date'] ) ); ?></p>
-		<h2 class="column small-12 text-center"><?php echo $dtdsh_event['about_times']; ?>起業家・投資家・専門家「お見合い」交流会</h2>
+		<h2 class="column small-12 text-center"><?php echo $dtdsh_event['about_times']; ?>起業家・投資家・専門家「お見合い」交流会<br><span style="color: #DDD;font-size: .7em">大学ベンチャーフォーラム<br>～広島大学のファーストペンギンたち～</span></h2>
 	</div>
 	<div class="row" id="countdown-timer">
 		<div class="column small-12 medium-12 large-6">

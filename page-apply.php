@@ -47,6 +47,7 @@ ob_start();
 	endif;
 	?>
 </div>
+<!--
 <div class="l-lp_section row">
 	<div class="column">
 		<h2 class="title-about -bold"><span class="-big">こんな方</span>に<span class="-big">オススメ</span>です！</h2>
@@ -61,6 +62,7 @@ ob_start();
 		</div>
 	</div>
 </div>
+-->
 <div class="l-lp_section row">
 	<div class="column">
 		<h2 class="title-about -bold"><span class="-big">お見合い交流会</span>の<span class="-big">内容</span>は？</h2>
@@ -70,28 +72,28 @@ ob_start();
 		</div>
 		<h3>起業家プレゼンテーション</h3>
 		<?php
-			if ( isset( $dtdsh_event['presentor_1'] ) ) :
+			if ( ! empty( $dtdsh_event['presentor_1'] ) ) :
 		?>
 		<div class="-indent clearfix">
 			<span class="p-number">１</span><p class="-big"><?php echo $dtdsh_event['presentor_1']; ?>による<span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_1']; ?>」</span></p>
 		</div>
 		<?php
 			endif;
-			if ( isset( $dtdsh_event['presentor_2'] ) ) :
+			if ( ! empty( $dtdsh_event['presentor_2'] ) ) :
 		?>
 		<div class="-indent clearfix">
-			<span class="p-number">２</span><p class="-big"><?php echo $dtdsh_event['presentor_2']; ?><span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_2']; ?>」</span></p>
+			<span class="p-number">２</span><p class="-big"><?php echo $dtdsh_event['presentor_2']; ?>による<span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_2']; ?>」</span></p>
 		</div>
 		<?php
 			endif;
-			if ( isset( $dtdsh_event['presentor_3'] ) ) :
+			if ( ! empty( $dtdsh_event['presentor_3'] ) ) :
 		?>
 		<div class="-indent clearfix">
 			<span class="p-number">３</span><p class="-big"><?php echo $dtdsh_event['presentor_3']; ?>による<span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_3']; ?>」</span></p>
 		</div>
 		<?php
 			endif;
-			if ( isset( $dtdsh_event['presentor_4'] ) ) :
+			if ( ! empty( $dtdsh_event['presentor_4'] ) ) :
 		?>
 		<div class="-indent clearfix">
 			<span class="p-number">４</span><p class="-big"><?php echo $dtdsh_event['presentor_4']; ?>による<span class="-big -block -bold">「<?php echo $dtdsh_event['presen_title_4']; ?>」</span></p>
@@ -197,7 +199,7 @@ ob_start();
 				<td><?php echo date( 'Y年m月d日', strtotime( $dtdsh_event['about_date'] ) ); ?>（<?php echo dtdsh_date_to_week( $dtdsh_event['about_date'] ); ?>）<br>開会<?php echo $dtdsh_event['about_time']; ?>（受付開始<?php echo $dtdsh_event['about_time_opening']; ?>～）</td>
 			</tr>
 			<?php
-				if ( isset( $dtdsh_event['about_party_place'] ) ) :
+				if ( ! empty( $dtdsh_event['about_party_place'] ) ) :
 			?>
 			<tr>
 				<th>講演・プレゼン会場</th>
@@ -239,11 +241,25 @@ ob_start();
 			</tr>
 			<tr>
 				<th>お申込み</th>
-				<td><a href="<?php echo $dtdsh_event['about_form']; ?>" title="お申込みフォーム" target="_blank" class="button">お申込みフォーム</a></td>
+				<td><a href="<?php echo $dtdsh_event['about_form']; ?>" title="お申込みフォーム" target="_blank" class="button" rel="nofollow">お申込みフォーム</a></td>
 			</tr>
 		</table>
 	</div>
-	<div id="seminar-map" class="column small-12 large-6"><?php echo $dtdsh_event['about_iframe']; ?></div>
+	<?php
+		if ( ! empty( $dtdsh_event['about_party_iframe'] ) ) :
+	?>
+	<div class="column small-12 large-6"><?php
+		$presen = preg_replace( '/height="100%"/', 'height="50%"', $dtdsh_event['about_iframe'] );
+		$party = preg_replace( '/height="100%"/', 'height="50%"', $dtdsh_event['about_party_iframe'] );
+		echo $presen, $party;
+	?></div>
+	<?php
+		else:
+	?>
+	<div class="column small-12 large-6"><?php echo $dtdsh_event['about_iframe']; ?></div>
+	<?php
+		endif;
+	?>
 </div>
 <div class="l-lp_section row">
 	<div class="column">

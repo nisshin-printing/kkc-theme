@@ -27,6 +27,8 @@ if ( ! function_exists( 'kkc_setup_theme' ) ) :
 function kkc_setup_theme() {
 	add_editor_style( 'assets/css/editor-style.css' );
 	add_theme_support( 'post-thumbnails' );
+
+	add_theme_support( 'title-tag' );
 	add_theme_support( 'html5', array(
 		'gallery'
 	) );

@@ -256,8 +256,14 @@ function dtdsh_event_options() {
 				'def' => ''
 			),
 			array(
-				'name' => '地図の埋め込みコード',
+				'name' => '講演・プレゼン会場の地図',
 				'fn' => 'about_iframe',
+				'type' => 'input',
+				'def' => '<iframe src="http://maps.google.co.jp/maps?q=ひろしまハイビル&amp;z=15&amp;output=embed" frameborder="0" width="100%" height="100%" scrolling="no" marginheight="0" marginwidth="0"></iframe>'
+			),
+			array(
+				'name' => '懇親会会場の地図',
+				'fn' => 'about_party_iframe',
 				'type' => 'input',
 				'def' => '<iframe src="http://maps.google.co.jp/maps?q=ひろしまハイビル&amp;z=15&amp;output=embed" frameborder="0" width="100%" height="100%" scrolling="no" marginheight="0" marginwidth="0"></iframe>'
 			),
